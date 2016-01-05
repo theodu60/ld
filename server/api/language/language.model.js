@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var LanguageSchema = new Schema({
   id: Number,
   code: String,
-  name: String,
+  label: String,
   info: String,
   active: Boolean
 });
