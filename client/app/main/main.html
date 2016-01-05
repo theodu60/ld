@@ -1,16 +1,25 @@
-<navbar></navbar>
+<div class="row div_center">
+	<div class="col-md-2"></div>
+	<div class="col-md-4">
+		<img id="logo_img" src="../../assets/images/logo.png">
+	</div>
 
-
-<textarea ng-model="string">
-...
-</textarea>
-{{string}}
-<button ng-click="test()"> click</button>
-<div>
-    Show:
-    <div ng-show='result'>
-        I show up when your checkbox is checked.
-    </div>
+	<div class="col-md-4">
+		<textarea class="form-control" rows="6" ng-model="text"></textarea>
+		<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+	</div>
+	<div class="col-md-2"></div>
 </div>
-<div>
+
+<div class="row">
+	<div class="col-md-2"></div>
+
+	<div class="col-md-4 message_found" >
+		<h1>Language found : <span id="language_found">French</span></h1>
+	</div>
+</div>
+
+<div class="wrong_language" >
+    <p>Wrong language ? Help us to improve our application !<br />
+	Select the correct language : </p>
 </div>
