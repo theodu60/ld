@@ -25,3 +25,38 @@
 .navbar-text {
   margin-left: 15px;
 }
+
+#logo_img {
+  height: 100px;
+}
+
+.div_center {
+  margin-top: 200px;
+}
+
+#language_found {
+  text-decoration: underline;
+}
+
+.message_found h1 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #707070;
+}
+
+.wrong_language {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#btn-submit {
+  margin-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+}
+
+.select_language {
+  width : auto;
+  display: inline-block;
+}
