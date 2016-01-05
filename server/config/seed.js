@@ -7,6 +7,124 @@
 import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Language from '../api/language/language.model';
+import Detect from '../api/detect/detect.model';
+
+
+Detect.find({}).removeAsync()
+  .then(function() {
+    Detect.create(
+      {
+          "ouput" : 40,
+          "freq" : [ 
+              {
+                  "label" : "h",
+                  "value" : 0.0086490939044481
+              }, 
+              {
+                  "label" : "e",
+                  "value" : 0.1649505766062603
+              }, 
+              {
+                  "label" : "u",
+                  "value" : 0.0679571663920923
+              }, 
+              {
+                  "label" : "r",
+                  "value" : 0.0739291598023064
+              }, 
+              {
+                  "label" : "s",
+                  "value" : 0.0827841845140033
+              }, 
+              {
+                  "label" : "v",
+                  "value" : 0.0207990115321252
+              }, 
+              {
+                  "label" : "o",
+                  "value" : 0.0512767710049423
+              }, 
+              {
+                  "label" : "n",
+                  "value" : 0.0619851729818781
+              }, 
+              {
+                  "label" : "m",
+                  "value" : 0.0304777594728171
+              }, 
+              {
+                  "label" : "z",
+                  "value" : 0.0032948929159802
+              }, 
+              {
+                  "label" : "p",
+                  "value" : 0.0317133443163097
+              }, 
+              {
+                  "label" : "l",
+                  "value" : 0.0619851729818781
+              }, 
+              {
+                  "label" : "i",
+                  "value" : 0.0739291598023064
+              }, 
+              {
+                  "label" : "a",
+                  "value" : 0.0881383855024712
+              }, 
+              {
+                  "label" : "d",
+                  "value" : 0.0376853377265239
+              }, 
+              {
+                  "label" : "c",
+                  "value" : 0.0247116968698517
+              }, 
+              {
+                  "label" : "t",
+                  "value" : 0.0611614497528830
+              }, 
+              {
+                  "label" : "b",
+                  "value" : 0.0088550247116969
+              }, 
+              {
+                  "label" : "q",
+                  "value" : 0.0113261943986820
+              }, 
+              {
+                  "label" : "g",
+                  "value" : 0.0084431630971993
+              }, 
+              {
+                  "label" : "j",
+                  "value" : 0.0070016474464580
+              }, 
+              {
+                  "label" : "f",
+                  "value" : 0.0115321252059308
+              }, 
+              {
+                  "label" : "x",
+                  "value" : 0.0037067545304778
+              }, 
+              {
+                  "label" : "y",
+                  "value" : 0.0032948929159802
+              }, 
+              {
+                  "label" : "w",
+                  "value" : 0.0002059308072488
+              }, 
+              {
+                  "label" : "k",
+                  "value" : 0.0002059308072488
+              }
+          ]
+      }
+      );
+  });
+
 
 Language.find({}).removeAsync()
   .then(function() {
