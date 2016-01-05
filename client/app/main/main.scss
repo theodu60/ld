@@ -41,7 +41,7 @@
 .message_found h1 {
   font-weight: bold;
   font-size: 24px;
-  color: #C0C0C0;
+  color: #707070;
 }
 
 .wrong_language {
@@ -50,5 +50,13 @@
 }
 
 #btn-submit {
-  
+  margin-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+}
+
+.select_language {
+  width : auto;
+  display: inline-block;
 }
