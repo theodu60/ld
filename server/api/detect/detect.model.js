@@ -8,7 +8,7 @@ var DetectSchema = new Schema({
   	label: String,
   	value: Number 
   }],
-  ouput: String,
+  ouput: Number,
   info: String,
   active: Boolean
 });
