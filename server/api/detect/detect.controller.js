@@ -141,6 +141,15 @@ function createObjForAlgo(MongoRes){
   }
   return ({input: input, ouput_freq: ouput_freq})
 }
+function allOuput(cb){
+  var result = []
+  Detect.find({}, { ouput: 1, _id:0 })
+    .then(function (data){
+      for (var i in data)
+        result.push(data[i].ouput)
+      cb(result)
+    }) 
+}
 function magique(newText, cb){
   //KNN METHODE
   var trainning = {
@@ -177,6 +186,11 @@ function magique(newText, cb){
 }
 // Creates a new Detect in the DB
 exports.create = function(req, res) {
+
+  allOuput(function (data){
+    console.log("data")
+    console.log(data)
+  })
   var input = req.body.input
   if (req.body.ouput)
     var output = req.body.ouput
