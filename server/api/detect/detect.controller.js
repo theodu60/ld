@@ -81,15 +81,17 @@ function isLetter(str) {
 //FREQUENCE LETTRE DANS UN TEXTE
 function getFrequency(string) {
     var freq = {};
-    var europeen = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var europeen = "abcdéëàèefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     var russian = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЭЯабвгдеёжзийклмнопрстуфхцчшщъы"
     var chinois = "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德"
     var japonais = "あかさたなはまやらわがざだばぱアカサタナハマヤラワガザダバパいきしちにひみりゐぎじぢびぴイキシチニヒミリヰギジヂビピうくすつぬふむゆるぐずづぶぷウクスツヌフムユルグズヅブプえけせてねへめれゑげぜでべぺエケセテネヘメレヱゲゼデベペおこそとのほもよろをんごぞどぼぽオコソトノホモヨロヲンゴゾドボポきゃしゃちゃにゃひゃみゃりゃぎゃじゃびゃぴゃキャシャチャニャヒャミャリャギャジャビャピャきゅしゅちゅにゅひゅみゅりゅぎゅじゅびゅぴゅキュシュチュニュヒュミュリュギュジュビュピュきょしょちょにょひょみょりょぎょじょびょぴょキョショチョニョヒョミョリョギョジョビョピョ"
+    var arabe = "ﺍﺏﺕﺙﺝﺡﺥﺩﺫﺭﺯﺱﺵﺹﺽﻁﻅﻉﻍﻑﻕﻙﻝﻡﻥﻩﻭﻱء‎"
+    var grec = "ABΓΔΕΖΗΘΙΚΛMΝΞΟΠΡΣΤΥΦΧΨΩ"
 
-    var tmp = europeen + russian + chinois + japonais
+    var tmp = europeen + russian + chinois + japonais + arabe + grec
     var lettres = tmp.split('')
     for (var i=0; i<string.length;i++) {
-        var character = string.charAt(i);
+        var character = string[i];
         if (lettres.indexOf(character) != -1) {
           if (freq[character]) {
              freq[character]++;
