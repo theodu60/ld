@@ -11,6 +11,7 @@
 
 var _ = require('lodash');
 var Detect = require('./detect.model');
+var Language = require('../language/language.model');
 var ml = require('machine_learning');
 
 function handleError(res, statusCode) {
@@ -174,31 +175,34 @@ function magique(newText, cb){
     ouput_freq: []
   }
   Detect.findAsync()
-    .then(function (res){
-      trainning = createObjForAlgo(res)
-      //TEST
-    //  trainning.ouput_freq = [[0], [0], [1], [0], [1], [1], [0], [0], [0]]
-      console.log(trainning)
+    .then(function (data){
+      if (data.length == 0){
+        cb(0)        
+      }
+      else {
+        trainning = createObjForAlgo(data)
+        //TEST
+      //  trainning.ouput_freq = [[0], [0], [1], [0], [1], [1], [0], [0], [0]]
+//        trainning.ouput_freq = [[1], [1], [2], [1], [2], [2], [1], [1], [1]]
 
-      trainning.ouput_freq = [[1], [1], [2], [1], [2], [2], [1], [1], [1]]
-
-      var data = trainning.input
-      var result = trainning.ouput_freq
-      var test = []
-      var newRes = []
-      newRes.push(newText)
-      test = createObjForAlgo(newRes).input
-      var knn = new ml.KNN({
-          data : data,
-          result : result
-      });
-      var y = knn.predict({
-          x : test[0],
-          k : 3,
-          weightf : {type : 'gaussian', sigma : 10.0},
-          distance : {type : 'euclidean'}
-      });
-      cb(parseInt(y))
+        var data = trainning.input
+        var result = trainning.ouput_freq
+        var test = []
+        var newRes = []
+        newRes.push(newText)
+        test = createObjForAlgo(newRes).input
+        var knn = new ml.KNN({
+            data : data,
+            result : result
+        });
+        var y = knn.predict({
+            x : test[0],
+            k : 3,
+            weightf : {type : 'gaussian', sigma : 10.0},
+            distance : {type : 'euclidean'}
+        });
+        cb(parseInt(y))
+      }
     })
 }
 // Creates a new Detect in the DB
@@ -220,11 +224,11 @@ exports.create = function(req, res) {
   //SI LE TEXTE EST UNE LANGUE INCONNU
   } else {
     magique(obj, function (codePays){
-      res.send(codePays)
+      Language.findAsync({id: codePays})
+        .then(responseWithResult(res))
+        .catch(handleError(res));           
     })
   }
-
-    
 };
 
 // Updates an existing Detect in the DB
