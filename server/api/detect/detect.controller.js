@@ -11,6 +11,7 @@
 
 var _ = require('lodash');
 var Detect = require('./detect.model');
+var Language = require('../language/language.model');
 var ml = require('machine_learning');
 
 function handleError(res, statusCode) {
@@ -150,22 +151,20 @@ function convertLibelToFreq(arrLibel){
 }
 function createObjForAlgo(MongoRes){
   var input = []
-  var ouput_libel = []
+  var ouput_freq = []
   var ouput_freq = []
   for (var i in MongoRes){
     if (!input[i])
       input[i] = []
-    if (!ouput_libel[i])
-      ouput_libel[i] = []
-    ouput_libel[i].push(MongoRes[i].ouput)
+    if (!ouput_freq[i])
+      ouput_freq[i] = []
+    ouput_freq[i].push(MongoRes[i].ouput)
     for (var y in MongoRes[i].freq){
       if (MongoRes[i].freq[y].value)
         input[i].push(MongoRes[i].freq[y].value)
       else
         input[i].push(0)
     }
-    if (!ouput_freq[i])
-      ouput_freq[i] = convertLibelToFreq(ouput_libel)
   }
   return ({input: input, ouput_freq: ouput_freq})
 }
@@ -176,51 +175,32 @@ function magique(newText, cb){
     ouput_freq: []
   }
   Detect.findAsync()
-    .then(function (res){
-      trainning = createObjForAlgo(res)
-      //TEST
-    //  trainning.ouput_freq = [[0], [0], [1], [0], [1], [1], [0], [0], [0]]
-      trainning.ouput_freq = [[1], [1], [2], [1], [2], [2], [1], [1], [1]]
-
-var data = trainning.input
-var result = trainning.ouput_freq
-var test = []
-
-var newRes = []
-newRes.push(newText)
-test = createObjForAlgo(newRes).input
-console.log(test[0])
-
-var knn = new ml.KNN({
-    data : data,
-    result : result
-});
- 
-var y = knn.predict({
-    x : test[0],
-    k : 3,
- 
-    weightf : {type : 'gaussian', sigma : 10.0},
-    // default : {type : 'gaussian', sigma : 10.0}
-    // {type : 'none'}. weight == 1
-    // Or you can use your own weight f
-    // weightf : function(distance) {return 1./distance}
- 
-    distance : {type : 'euclidean'}
-    // default : {type : 'euclidean'}
-    // {type : 'pearson'}
-    // Or you can use your own distance function
-    // distance : function(vecx, vecy) {return Math.abs(dot(vecx,vecy));}
-});
- 
-console.log(parseInt(y));
-
-cb(y)
-
-
+    .then(function (data){
+      if (data.length == 0){
+        cb(0)        
+      }
+      else {
+        trainning = createObjForAlgo(data)
+        var data = trainning.input
+        var result = trainning.ouput_freq
+        var test = []
+        var newRes = []
+        newRes.push(newText)
+        test = createObjForAlgo(newRes).input
+        console.log(test[0])
+        var knn = new ml.KNN({
+            data : data,
+            result : result
+        });
+        var y = knn.predict({
+            x : test[0],
+            k : 1,
+            weightf : {type : 'gaussian', sigma : 10.0},
+            distance : {type : 'euclidean'}
+        });
+        cb(parseInt(y))
+      }
     })
-
-
 }
 // Creates a new Detect in the DB
 exports.create = function(req, res) {
@@ -240,16 +220,12 @@ exports.create = function(req, res) {
       .catch(handleError(res));
   //SI LE TEXTE EST UNE LANGUE INCONNU
   } else {
-
-    magique(obj, function (){
-     res.send("ok")
+    magique(obj, function (codePays){
+      Language.findAsync({id: codePays})
+        .then(responseWithResult(res))
+        .catch(handleError(res));           
     })
-
-
-
   }
-
-    
 };
 
 // Updates an existing Detect in the DB
