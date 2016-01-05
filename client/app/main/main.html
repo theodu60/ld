@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="col-md-4">
-		<textarea class="form-control" rows="6" ng-model="user.text"></textarea>
+		<textarea class="form-control" rows="6" ng-model="user.text" ng-focus="hideResult()"></textarea>
 		<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
 	</div>
 	<div class="col-md-2"></div>
@@ -19,7 +19,7 @@
 	</div>
 </div>
 
-<div class="wrong_language" >
+<div class="wrong_language" ng-show="result">
     <p>
     	Wrong language ? Help us to improve our application !<br />
 		Select the correct language : 

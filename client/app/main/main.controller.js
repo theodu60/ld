@@ -2,16 +2,12 @@
 (function() {
 
 function MainController($scope, $http, socket) {
-  var self = this;
-  this.awesomeThings = [];
+
   $scope.user =  {
     text : '',
     langue: {}
   }
-  $http.get('/api/things').then(function(response) {
-    self.awesomeThings = response.data;
-    socket.syncUpdates('thing', self.awesomeThings);
-  });
+
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
     $scope.user.langue = $scope.languages[0]
@@ -55,6 +51,10 @@ function MainController($scope, $http, socket) {
   $scope.$on('$destroy', function() {
     socket.unsyncUpdates('thing');
   });
+
+  $scope.hideResult = function(){
+    $scope.result = null;
+  }
 }
 
 angular.module('ldApp')
