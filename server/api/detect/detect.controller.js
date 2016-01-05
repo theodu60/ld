@@ -198,8 +198,7 @@ function magique(newText, cb){
           weightf : {type : 'gaussian', sigma : 10.0},
           distance : {type : 'euclidean'}
       });
-      console.log(parseInt(y));
-      cb(y)
+      cb(parseInt(y))
     })
 }
 // Creates a new Detect in the DB
@@ -220,13 +219,9 @@ exports.create = function(req, res) {
       .catch(handleError(res));
   //SI LE TEXTE EST UNE LANGUE INCONNU
   } else {
-
-    magique(obj, function (){
-     res.send("ok")
+    magique(obj, function (codePays){
+      res.send(codePays)
     })
-
-
-
   }
 
     
