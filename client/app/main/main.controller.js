@@ -9,19 +9,18 @@ function MainController($scope, $http, socket) {
     self.awesomeThings = response.data;
     socket.syncUpdates('thing', self.awesomeThings);
   });
-  $scope.string = "";
-  $scope.test = function() {
-    $scope.result = "yep";
-    console.log($scope.result);
-  };
-        $http.post('/api/detects', {
-          input: $scope.string,
-          ouput: null
-        })
-        .then(function(res) {
-          console.log("ok");
+  $scope.text = "";
+  $scope.submit = function() {
+    console.log($scope.text);
+    $http.post('/api/detects', {
+      input: $scope.text,
+      ouput: null
+    }).then(function(res) {
           console.log(res);
+          $scope.result = res.statusText;
+          console.log($scope.result);
         });
+  };
 
   this.addThing = function() {
     if (self.newThing === '') {
