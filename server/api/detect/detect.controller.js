@@ -181,23 +181,20 @@ function magique(newText, cb){
       }
       else {
         trainning = createObjForAlgo(data)
-        //TEST
-      //  trainning.ouput_freq = [[0], [0], [1], [0], [1], [1], [0], [0], [0]]
-//        trainning.ouput_freq = [[1], [1], [2], [1], [2], [2], [1], [1], [1]]
-
         var data = trainning.input
         var result = trainning.ouput_freq
         var test = []
         var newRes = []
         newRes.push(newText)
         test = createObjForAlgo(newRes).input
+        console.log(test[0])
         var knn = new ml.KNN({
             data : data,
             result : result
         });
         var y = knn.predict({
             x : test[0],
-            k : 3,
+            k : 1,
             weightf : {type : 'gaussian', sigma : 10.0},
             distance : {type : 'euclidean'}
         });
