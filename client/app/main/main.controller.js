@@ -9,16 +9,21 @@ function MainController($scope, $http, socket) {
     self.awesomeThings = response.data;
     socket.syncUpdates('thing', self.awesomeThings);
   });
+  $http.get('/api/languages').then(function(response) {
+    $scope.languages = response.data;
+  });
   $scope.text = "";
   $scope.submit = function() {
-    console.log($scope.text);
     $http.post('/api/detects', {
       input: $scope.text,
       ouput: null
     }).then(function(res) {
-          console.log(res);
-          $scope.result = res.statusText;
-          console.log($scope.result);
+      console.log(res.data[0].label);
+        if(res.data[0].label.length > 0)
+          $scope.result = res.data[0].label;
+        else {
+          $scope.result = "NOT FOUND";
+        }
         });
   };
 
