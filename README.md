@@ -23,6 +23,16 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 4. Run `grunt serve` to start the development server. It should automatically open the client in your browser when ready.
 
+5. `sudo npm install machine_learning`
+
+6. `brew install cmake`
+
+7. Télécharger :[FANN](http://leenissen.dk/fann/wp/download/)
+
+8. Se mettre dans la racine du fichier téléchargé : `cmake .`
+
+9. `sudo make install`
+
 ## Build & development
 
 Run `grunt build` for building and `grunt serve` for preview.
