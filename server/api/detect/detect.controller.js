@@ -84,10 +84,9 @@ function getFrequency(string) {
     var europeen = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     var russian = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЭЯабвгдеёжзийклмнопрстуфхцчшщъы"
     var chinois = "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德"
-    var hiragana = "あかさたなはまやらわがざだばぱいきしちにひみりゐぎじぢびぴうくすつぬふむゆるぐずづぶぷえけせてねへめれゑげぜでべぺおこそとのほもよろをんごぞどぼぽきゃしゃちゃにゃひゃみゃりゃぎゃじゃびゃぴゃきゅしゅちゅにゅひゅみゅりゅぎゅじゅびゅぴゅきょしょちょにょひょみょりょぎょじょびょぴょ"
-    
+    var japonais = "あかさたなはまやらわがざだばぱアカサタナハマヤラワガザダバパいきしちにひみりゐぎじぢびぴイキシチニヒミリヰギジヂビピうくすつぬふむゆるぐずづぶぷウクスツヌフムユルグズヅブプえけせてねへめれゑげぜでべぺエケセテネヘメレヱゲゼデベペおこそとのほもよろをんごぞどぼぽオコソトノホモヨロヲンゴゾドボポきゃしゃちゃにゃひゃみゃりゃぎゃじゃびゃぴゃキャシャチャニャヒャミャリャギャジャビャピャきゅしゅちゅにゅひゅみゅりゅぎゅじゅびゅぴゅキュシュチュニュヒュミュリュギュジュビュピュきょしょちょにょひょみょりょぎょじょびょぴょキョショチョニョヒョミョリョギョジョビョピョ"
 
-    var tmp = europeen + russian + chinois + hiragana
+    var tmp = europeen + russian + chinois + japonais
     var lettres = tmp.split('')
     for (var i=0; i<string.length;i++) {
         var character = string.charAt(i);
