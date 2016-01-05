@@ -148,6 +148,7 @@ function createObjForAlgo(MongoRes){
   }
   return ({input: input, ouput_freq: ouput_freq})
 }
+
 function allOuput(cb){
   var result = []
   Detect.find({}, { ouput: 1, _id:0 })
@@ -157,6 +158,21 @@ function allOuput(cb){
       cb(result)
     }) 
 }
+
+function findNearLanguage(knowsLanguage, result){
+  var findedLanguageCode = null;
+  var minScale = 9999;
+  for(var i in knowsLanguage){
+    var currentScale = Math.abs(knowsLanguage[i] - result)
+    console.log(currentScale);
+    if (currentScale < minScale){
+      findedLanguageCode = knowsLanguage[i];
+      minScale = currentScale;
+    }
+  }
+  return findedLanguageCode;
+}
+
 function magique(newText, cb){
   //KNN METHODE
   var trainning = {
@@ -187,7 +203,12 @@ function magique(newText, cb){
             weightf : {type : 'gaussian', sigma : 10.0},
             distance : {type : 'euclidean'}
         });
-        cb(parseInt(y))
+
+        allOuput(function(data){
+          var knowLanguageDetected = findNearLanguage(data, parseInt(y));
+          cb(knowLanguageDetected);
+        })
+
       }
     })
 }
