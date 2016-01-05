@@ -1,7 +1,7 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, socket) {
+function MainController($scope, $http, socket,toaster) {
   var self = this;
   this.awesomeThings = [];
   $scope.user =  {
@@ -22,9 +22,13 @@ function MainController($scope, $http, socket) {
       input: $scope.user.text,
       ouput: $scope.user.langue.id
     }).then(function(res) {
-          $scope.result = "MERCI";
+          $scope.result = $scope.user.langue.label;
+          toaster.pop('success', ": D", "Thanks for your contribution !");
+
+
     });
   }
+
   $scope.submit = function() {
     console.log("MODE DETECTION")
     $http.post('/api/detects', {
