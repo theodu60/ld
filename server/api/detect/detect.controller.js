@@ -81,7 +81,14 @@ function isLetter(str) {
 //FREQUENCE LETTRE DANS UN TEXTE
 function getFrequency(string) {
     var freq = {};
-    var lettres = "abcdefghijklmnopqrstuvwxyz".split('')
+    var europeen = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var russian = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЭЯабвгдеёжзийклмнопрстуфхцчшщъы"
+    var chinois = "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德"
+    var hiragana = "あかさたなはまやらわがざだばぱいきしちにひみりゐぎじぢびぴうくすつぬふむゆるぐずづぶぷえけせてねへめれゑげぜでべぺおこそとのほもよろをんごぞどぼぽきゃしゃちゃにゃひゃみゃりゃぎゃじゃびゃぴゃきゅしゅちゅにゅひゅみゅりゅぎゅじゅびゅぴゅきょしょちょにょひょみょりょぎょじょびょぴょ"
+    
+
+    var tmp = europeen + russian + chinois + hiragana
+    var lettres = tmp.split('')
     for (var i=0; i<string.length;i++) {
         var character = string.charAt(i);
         if (lettres.indexOf(character) != -1) {
