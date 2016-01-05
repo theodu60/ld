@@ -1,17 +1,13 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, socket,toaster) {
-  var self = this;
-  this.awesomeThings = [];
+function MainController($scope, $http, socket, toaster) {
+
   $scope.user =  {
     text : '',
     langue: {}
   }
-  $http.get('/api/things').then(function(response) {
-    self.awesomeThings = response.data;
-    socket.syncUpdates('thing', self.awesomeThings);
-  });
+
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
     $scope.user.langue = $scope.languages[0]
@@ -59,6 +55,10 @@ function MainController($scope, $http, socket,toaster) {
   $scope.$on('$destroy', function() {
     socket.unsyncUpdates('thing');
   });
+
+  $scope.hideResult = function(){
+    $scope.result = null;
+  }
 }
 
 angular.module('ldApp')

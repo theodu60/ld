@@ -81,9 +81,17 @@ function isLetter(str) {
 //FREQUENCE LETTRE DANS UN TEXTE
 function getFrequency(string) {
     var freq = {};
-    var lettres = "abcdefghijklmnopqrstuvwxyz".split('')
+    var europeen = "abcdéëàèefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var russian = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЭЯабвгдеёжзийклмнопрстуфхцчшщъы"
+    var chinois = "阿贝色德饿艾弗日阿什伊鸡卡艾勒艾马艾娜哦佩苦艾和艾丝特玉维独布勒维伊克斯伊格黑克贼德"
+    var japonais = "あかさたなはまやらわがざだばぱアカサタナハマヤラワガザダバパいきしちにひみりゐぎじぢびぴイキシチニヒミリヰギジヂビピうくすつぬふむゆるぐずづぶぷウクスツヌフムユルグズヅブプえけせてねへめれゑげぜでべぺエケセテネヘメレヱゲゼデベペおこそとのほもよろをんごぞどぼぽオコソトノホモヨロヲンゴゾドボポきゃしゃちゃにゃひゃみゃりゃぎゃじゃびゃぴゃキャシャチャニャヒャミャリャギャジャビャピャきゅしゅちゅにゅひゅみゅりゅぎゅじゅびゅぴゅキュシュチュニュヒュミュリュギュジュビュピュきょしょちょにょひょみょりょぎょじょびょぴょキョショチョニョヒョミョリョギョジョビョピョ"
+    var arabe = "ﺍﺏﺕﺙﺝﺡﺥﺩﺫﺭﺯﺱﺵﺹﺽﻁﻅﻉﻍﻑﻕﻙﻝﻡﻥﻩﻭﻱء‎"
+    var grec = "ABΓΔΕΖΗΘΙΚΛMΝΞΟΠΡΣΤΥΦΧΨΩ"
+
+    var tmp = europeen + russian + chinois + japonais + arabe + grec
+    var lettres = tmp.split('')
     for (var i=0; i<string.length;i++) {
-        var character = string.charAt(i);
+        var character = string[i];
         if (lettres.indexOf(character) != -1) {
           if (freq[character]) {
              freq[character]++;
@@ -141,6 +149,7 @@ function createObjForAlgo(MongoRes){
   }
   return ({input: input, ouput_freq: ouput_freq})
 }
+
 function allOuput(cb){
   var result = []
   Detect.find({}, { ouput: 1, _id:0 })
@@ -150,6 +159,21 @@ function allOuput(cb){
       cb(result)
     }) 
 }
+
+function findNearLanguage(knowsLanguage, result){
+  var findedLanguageCode = null;
+  var minScale = 9999;
+  for(var i in knowsLanguage){
+    var currentScale = Math.abs(knowsLanguage[i] - result)
+    console.log(currentScale);
+    if (currentScale < minScale){
+      findedLanguageCode = knowsLanguage[i];
+      minScale = currentScale;
+    }
+  }
+  return findedLanguageCode;
+}
+
 function magique(newText, cb){
   //KNN METHODE
   var trainning = {
@@ -180,7 +204,12 @@ function magique(newText, cb){
             weightf : {type : 'gaussian', sigma : 10.0},
             distance : {type : 'euclidean'}
         });
-        cb(parseInt(y))
+
+        allOuput(function(data){
+          var knowLanguageDetected = findNearLanguage(data, parseInt(y));
+          cb(knowLanguageDetected);
+        })
+
       }
     })
 }
