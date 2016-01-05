@@ -5,7 +5,7 @@
 	</div>
 
 	<div class="col-md-4">
-		<textarea class="form-control" rows="6" ng-model="text"></textarea>
+		<textarea class="form-control" rows="6" ng-model="user.text"></textarea>
 		<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
 	</div>
 	<div class="col-md-2"></div>
@@ -23,9 +23,8 @@
     <p>
     	Wrong language ? Help us to improve our application !<br />
 		Select the correct language : 
-		<select class="form-control input-sm select_language" >
-	  		<option ng-repeat="language in languages">{{language.label}}</option>
-	  	</select>
-		<button type="submit" class="btn btn-primary btn-sm" ng-click="submit()">Correct it !</button>
+		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue"></select>
+
+		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">Correct it !</button>
   	</p>
 </div>

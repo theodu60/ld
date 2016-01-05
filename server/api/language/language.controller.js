@@ -61,9 +61,8 @@ function removeEntity(res) {
 
 // Gets a list of Languages
 exports.index = function(req, res) {
-  Language.findAsync()
+  Language.find({}).sort({ label : 1})
     .then(responseWithResult(res))
-    .catch(handleError(res));
 };
 
 // Gets a single Language from the DB

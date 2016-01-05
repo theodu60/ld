@@ -81,34 +81,7 @@ function isLetter(str) {
 //FREQUENCE LETTRE DANS UN TEXTE
 function getFrequency(string) {
     var freq = {};
-    var lettres = [
-      'a',
-      'b',
-      'c',
-      'd',
-      'e',
-      'f',
-      'g',
-      'h',
-      'i',
-      'j',
-      'k',
-      'l',
-      'm',
-      'n',
-      'o',
-      'p',
-      'q',
-      'r',
-      's',
-      't',
-      'u',
-      'v',
-      'w',
-      'x',
-      'y',
-      'z'
-    ]
+    var lettres = "abcdefghijklmnopqrstuvwxyz".split('')
     for (var i=0; i<string.length;i++) {
         var character = string.charAt(i);
         if (lettres.indexOf(character) != -1) {
@@ -169,6 +142,7 @@ function createObjForAlgo(MongoRes){
   return ({input: input, ouput_freq: ouput_freq})
 }
 function magique(newText, cb){
+  //KNN METHODE
   var trainning = {
     input: [],
     ouput_libel: [],
@@ -187,7 +161,6 @@ function magique(newText, cb){
         var newRes = []
         newRes.push(newText)
         test = createObjForAlgo(newRes).input
-        console.log(test[0])
         var knn = new ml.KNN({
             data : data,
             result : result
@@ -213,12 +186,13 @@ exports.create = function(req, res) {
     freq : getFrequency(input),
     ouput: output
   }
-  //SI LE TEXTE EST UNE LANGUE CONNU
+  console.log(obj)
+  //SI LE TEXTE EST UNE LANGUE CONNU: ON APPREND 
   if (output) {
     Detect.createAsync(obj)
       .then(responseWithResult(res, 201))
       .catch(handleError(res));
-  //SI LE TEXTE EST UNE LANGUE INCONNU
+  //SI LE TEXTE EST UNE LANGUE INCONNU: ON DEVINE 
   } else {
     magique(obj, function (codePays){
       Language.findAsync({id: codePays})

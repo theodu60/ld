@@ -4,18 +4,31 @@
 function MainController($scope, $http, socket) {
   var self = this;
   this.awesomeThings = [];
-
+  $scope.user =  {
+    text : '',
+    langue: {}
+  }
   $http.get('/api/things').then(function(response) {
     self.awesomeThings = response.data;
     socket.syncUpdates('thing', self.awesomeThings);
   });
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
+    $scope.user.langue = $scope.languages[0]
   });
-  $scope.text = "";
-  $scope.submit = function() {
+  $scope.correct = function (value){
+    console.log("MODE CORRECTION")
     $http.post('/api/detects', {
-      input: $scope.text,
+      input: $scope.user.text,
+      ouput: $scope.user.langue.id
+    }).then(function(res) {
+          $scope.result = "MERCI";
+    });
+  }
+  $scope.submit = function() {
+    console.log("MODE DETECTION")
+    $http.post('/api/detects', {
+      input: $scope.user.text,
       ouput: null
     }).then(function(res) {
       console.log(res.data[0].label);
@@ -24,7 +37,7 @@ function MainController($scope, $http, socket) {
         else {
           $scope.result = "NOT FOUND";
         }
-        });
+    });
   };
 
   this.addThing = function() {
