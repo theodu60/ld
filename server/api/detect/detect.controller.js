@@ -165,7 +165,6 @@ function findNearLanguage(knowsLanguage, result){
   var minScale = 9999;
   for(var i in knowsLanguage){
     var currentScale = Math.abs(knowsLanguage[i] - result)
-    console.log(currentScale);
   
     if (currentScale < minScale){
       findedLanguageCode = knowsLanguage[i];
