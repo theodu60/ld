@@ -27,8 +27,8 @@ angular.module('ldApp', [
       TITLE: 'Langue trouvée : ',
       WRONG: 'Mauvaise langue ? Aidez nous à améliorer notre application !',
       SELECT: 'Selectionner la langue : ',
-      CORRECT: 'Corrigé',
-      ANALYSE: 'Analysé',
+      CORRECT: 'Corriger',
+      ANALYSE: 'Analyser',
       TRANSLATION: 'Traduire'
     });
   $translateProvider.preferredLanguage('en');
