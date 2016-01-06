@@ -9,12 +9,29 @@ angular.module('ldApp', [
   'ui.bootstrap',
   'validation.match',
   'toaster',
-  'ngAnimate'
+  'ngAnimate',
+  'pascalprecht.translate'
 ])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider,$translateProvider) {
     $urlRouterProvider
       .otherwise('/');
-
+    $translateProvider.translations('en', {
+      TITLE: 'Language found : ',
+      WRONG: 'Wrong language ? Help us to improve our application !',
+      SELECT: 'Select the correct language : ',
+      CORRECT: 'Correct it',
+      ANALYSE: 'Analyse',
+      TRANSLATION: 'Translate'
+    });
+    $translateProvider.translations('fr', {
+      TITLE: 'Langue trouvée : ',
+      WRONG: 'Mauvaise langue ? Aidez nous à améliorer notre application !',
+      SELECT: 'Selectionner la langue : ',
+      CORRECT: 'Corrigé',
+      ANALYSE: 'Analysé',
+      TRANSLATION: 'Traduire'
+    });
+  $translateProvider.preferredLanguage('en');
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
   })

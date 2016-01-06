@@ -1,12 +1,19 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, socket, toaster) {
+function MainController($scope, $http, socket, toaster,$translate) {
+  $scope.tradLang = [
+    {id: 0, code: 'en'},
+    {id: 1, code: 'fr'},
+  ]
   $scope.user =  {
     text : '',
-    langue: {}
+    langue: {},
+    langueWebsite: $scope.tradLang[0]
   };
-
+  $scope.changeLanguage = function (key) {
+    $translate.use(key.code);
+  };
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
   });
