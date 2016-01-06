@@ -33,6 +33,7 @@ function MainController($scope, $http, socket, toaster) {
         if(res.data[0].label != "Not Found") {
           $scope.lang_origine = res.data[0].code;
         }
+      $scope.result_trad = null;
       $scope.result = res.data[0].label;
     });
   };
