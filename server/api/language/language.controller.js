@@ -61,6 +61,10 @@ function removeEntity(res) {
 
 // Gets a list of Languages
 exports.index = function(req, res) {
+
+  var cv = require('opencv');
+  var mat = new cv.Matrix.Eye(4,4);
+  console.log(mat)
   Language.find({}).sort({ label : 1})
     .then(responseWithResult(res))
 };
