@@ -2,29 +2,42 @@
 	<div class="col-md-2"></div>
 	<div class="col-md-4" align="center">
 		<img id="logo_img" src="../../assets/images/logo.png">
+
+		<div class="message_found" align="center" ng-show="result">
+		<h1>Language found : <span id="language_found">{{result}}</span></h1>
+	</div>
 	</div>
 
 	<div class="col-md-4">
-		<textarea class="form-control" rows="6" ng-model="user.text" ng-focus="hideResult()"></textarea>
-		<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
+  		<div class="panel-heading" ng-show="result_trad">
+	    	<h3 class="panel-title">{{result}}</h3>
+	 	</div>
+		<textarea class="form-control" rows="6" ng-model="user.text"></textarea>
+
+  		
+  		<div class="panel-heading" ng-show="result_trad">
+	    	<h3 class="panel-title">{{lang_title}}</h3>
+	 	</div>
+		<div class="panel panel-default" ng-show="result_trad">
+		  <div class="panel-body">
+		    {{result_trad}}
+		  </div>
+		</div>
+		<form novalidate class="simple-form">
+			<select class="form-control input-sm select_language translator"  ng-options="language as language.label for language in languages" ng-show="result" ng-model="user.langue"  ></select>
+			<button type="submit" class="btn btn-primary"  ng-show="result" ng-click="translation(user.langue.code)">Translation</button>
+			<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
+		</form>
 	</div>
 	<div class="col-md-2"></div>
-</div>
-
-<div class="row">
-	<div class="col-md-2"></div>
-
-	<div class="col-md-4 message_found" align="center" ng-show="result">
-		<h1>Language found : <span id="language_found">{{result}}</span></h1>
-	</div>
 </div>
 <toaster-container></toaster-container>
 
 <div class="wrong_language" ng-show="result">
     <p>
     	Wrong language ? Help us to improve our application !<br />
-		Select the correct language : 
-		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue"></select>
+		Select the correct language :
+		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue2"></select>
 
 		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">Correct it !</button>
   	</p>

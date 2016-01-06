@@ -166,6 +166,7 @@ function findNearLanguage(knowsLanguage, result){
   for(var i in knowsLanguage){
     var currentScale = Math.abs(knowsLanguage[i] - result)
     console.log(currentScale);
+  
     if (currentScale < minScale){
       findedLanguageCode = knowsLanguage[i];
       minScale = currentScale;
@@ -216,10 +217,7 @@ function magique(newText, cb){
 // Creates a new Detect in the DB
 exports.create = function(req, res) {
 
-  allOuput(function (data){
-    console.log("data")
-    console.log(data)
-  })
+
   var input = req.body.input
   if (req.body.ouput)
     var output = req.body.ouput
@@ -229,7 +227,7 @@ exports.create = function(req, res) {
     freq : getFrequency(input),
     ouput: output
   }
-  console.log(obj)
+
   //SI LE TEXTE EST UNE LANGUE CONNU: ON APPREND 
   if (output) {
     Detect.createAsync(obj)

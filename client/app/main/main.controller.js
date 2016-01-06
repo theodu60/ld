@@ -2,42 +2,54 @@
 (function() {
 
 function MainController($scope, $http, socket, toaster) {
-
   $scope.user =  {
     text : '',
     langue: {}
-  }
+  };
 
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
-    $scope.user.langue = $scope.languages[0]
   });
-  $scope.correct = function (value){
-    console.log("MODE CORRECTION")
+
+  $scope.correct = function (){
+    console.log("MODE CORRECTION correct");
     $http.post('/api/detects', {
       input: $scope.user.text,
-      ouput: $scope.user.langue.id
-    }).then(function(res) {
-          $scope.result = $scope.user.langue.label;
-          toaster.pop('success', ": D", "Thanks for your contribution !");
-
-
+      ouput: $scope.user.langue2.id
+    }).then(function() {
+        console.log($scope.user.langue2.label);
+        $scope.lang_origine = $scope.user.langue2.code;
+        $scope.result = $scope.user.langue2.label;
+        toaster.pop('success', ": D", "Thanks for your contribution !");
     });
-  }
+  };
 
   $scope.submit = function() {
-    console.log("MODE DETECTION")
+    console.log("MODE DETECTION submit");
     $http.post('/api/detects', {
       input: $scope.user.text,
       ouput: null
     }).then(function(res) {
-      console.log(res.data[0].label);
-        if(res.data[0].label.length > 0)
-          $scope.result = res.data[0].label;
-        else {
-          $scope.result = "NOT FOUND";
+        if(res.data[0].label != "Not Found") {
+          $scope.lang_origine = res.data[0].code;
         }
+      $scope.result_trad = null;
+      $scope.result = res.data[0].label;
     });
+  };
+
+  $scope.translation = function(lang_trad) {
+    console.log("translation");
+    var text = $scope.user.text.replace(" ", "+");
+    $scope.lang_title = $scope.user.langue.label;
+    $http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160105T142037Z.acb0d58429100cf0.f0b456919f6f9505be214b6e040fed51b1b2ed42&text=' + text + "&lang=" + $scope.lang_origine + "-" + lang_trad, {
+    }).then(function(res) {
+      $scope.result_trad = res.data.text[0];
+    }).catch(function(error) {
+      $scope.result_trad = "";
+      toaster.pop('error', ":(", error.data.message);
+
+    })
   };
 
   this.addThing = function() {

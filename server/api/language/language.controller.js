@@ -129,6 +129,7 @@ console.log("prediction " + prediction)
 
 // Gets a list of Languages
 exports.index = function(req, res) {
+<<<<<<< HEAD
 var nbFiles = [0,1,2,3,4,5,6,7]
 var matrix = []
 
@@ -174,6 +175,12 @@ var matrix = []
 */
 
 
+=======
+
+  var cv = require('opencv');
+  var mat = new cv.Matrix.Eye(4,4);
+  console.log(mat)
+>>>>>>> origin/dev
   Language.find({}).sort({ label : 1})
     .then(responseWithResult(res))
 };
