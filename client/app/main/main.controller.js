@@ -10,18 +10,18 @@ function MainController($scope, $http, socket, toaster) {
 
   $http.get('/api/languages').then(function(response) {
     $scope.languages = response.data;
-    $scope.user.langue = $scope.languages[0];
-    console.log($scope.languages);
   });
 
-  $scope.correct = function (value){
+  $scope.correct = function (){
     console.log("MODE CORRECTION correct");
     $http.post('/api/detects', {
       input: $scope.user.text,
-      ouput: $scope.user.langue.id
-    }).then(function(res) {
-          $scope.result = $scope.user.langue.label;
-          toaster.pop('success', ": D", "Thanks for your contribution !");
+      ouput: $scope.user.langue2.id
+    }).then(function() {
+        console.log($scope.user.langue2.label);
+        $scope.lang_origine = $scope.user.langue2.code;
+        $scope.result = $scope.user.langue2.label;
+        toaster.pop('success', ": D", "Thanks for your contribution !");
     });
   };
 
@@ -39,6 +39,7 @@ function MainController($scope, $http, socket, toaster) {
   };
 
   $scope.translation = function(lang_trad) {
+    console.log("translation");
     var text = $scope.user.text.replace(" ", "+");
     $scope.lang_title = $scope.user.langue.label;
     $http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160105T142037Z.acb0d58429100cf0.f0b456919f6f9505be214b6e040fed51b1b2ed42&text=' + text + "&lang=" + $scope.lang_origine + "-" + lang_trad, {

@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="col-md-4">
-  		<div class="panel-heading">
+  		<div class="panel-heading" ng-show="result_trad">
 	    	<h3 class="panel-title">{{result}}</h3>
 	 	</div>
 		<textarea class="form-control" rows="6" ng-model="user.text"></textarea>
@@ -26,8 +26,8 @@
 		<form novalidate class="simple-form">
 			<select class="form-control input-sm select_language translator"  ng-options="language as language.label for language in languages" ng-show="result" ng-model="user.langue"  ></select>
 			<button type="submit" class="btn btn-primary"  ng-show="result" ng-click="translation(user.langue.code)">Translation</button>
+			<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
 		</form>
-		<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">Analyze</button>
 	</div>
 	<div class="col-md-2"></div>
 </div>
@@ -36,8 +36,8 @@
 <div class="wrong_language" ng-show="result">
     <p>
     	Wrong language ? Help us to improve our application !<br />
-		Select the correct language : 
-		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue"></select>
+		Select the correct language :
+		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue2"></select>
 
 		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">Correct it !</button>
   	</p>
