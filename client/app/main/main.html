@@ -1,4 +1,8 @@
-			<select class="form-control input-sm select_language"  ng-options="language.code | translate for  language in tradLang" ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)"></select>
+<select class="form-control input-sm select_language multilangue"  
+		ng-options="language.code | translate for  language in tradLang" 
+		ng-model="user.langueWebsite" 
+		ng-change="changeLanguage(user.langueWebsite)">
+</select>
 
 <div class="row div_center">
 	<div class="col-md-2"></div>
