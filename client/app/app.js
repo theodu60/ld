@@ -11,7 +11,8 @@ angular.module('ldApp', [
   'toaster',
   'ngAnimate',
   'pascalprecht.translate',
-  'ngMaterial'
+  'ngMaterial',
+  'ngMessages'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider,$translateProvider) {
     $urlRouterProvider
@@ -23,6 +24,7 @@ angular.module('ldApp', [
       CORRECT: 'Correct it',
       ANALYSE: 'Analyse',
       TRANSLATION: 'Translate',
+      ENTERTEXTE: 'What is it ?',
       sq: 'Albanian',
       en: 'English',
       ar: 'Arabic',
@@ -94,6 +96,7 @@ angular.module('ldApp', [
       CORRECT: 'Corriger',
       ANALYSE: 'Analyser',
       TRANSLATION: 'Traduire',
+      ENTERTEXTE: 'Qu\'est ce que c\'est',
       sq: 'Albanais',
       en: 'Anglais',
       ar: 'Arabe',
@@ -165,6 +168,7 @@ $translateProvider.translations('zh', {
       CORRECT: '正确的',
       ANALYSE: '分析一下',
       TRANSLATION: '翻译',
+      ENTERTEXTE: '阿尔巴尼亚翻译',
       sq: '阿尔巴尼亚',
       en: '英文',
       ar: '阿拉伯文',
