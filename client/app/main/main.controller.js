@@ -58,7 +58,7 @@ function MainController($scope, $http, socket, toaster,$translate) {
         }).then(function() {
             console.log($scope.user.langue2.label);
             $scope.lang_origine = $scope.user.langue2.code;
-            $scope.result = $scope.user.langue2.label;
+            $scope.result = $scope.user.langue2.code;
             toaster.pop('success', ": D", dynTrad[$scope.user.langueWebsite.code].thx);
         });
     };
@@ -71,13 +71,13 @@ function MainController($scope, $http, socket, toaster,$translate) {
             if(res.data[0].label != dynTrad[$scope.user.langueWebsite.code].notFound)
                 $scope.lang_origine = res.data[0].code;
             $scope.result_trad = null;
-            $scope.result = res.data[0].label;
+            $scope.result = res.data[0].code;
         });
     };
     
     $scope.translation = function(lang_trad) {
           var text = $scope.user.text.replace(" ", "+");
-          $scope.lang_title = $scope.user.langue.label;
+          $scope.lang_title = $scope.user.langue.code;
           $http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160105T142037Z.acb0d58429100cf0.f0b456919f6f9505be214b6e040fed51b1b2ed42&text=' + text + "&lang=" + $scope.lang_origine + "-" + lang_trad, {}).then(function(res) {
             $scope.result_trad = res.data.text[0];
             }).catch(function(error) {
