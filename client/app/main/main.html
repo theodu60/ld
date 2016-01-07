@@ -1,4 +1,4 @@
-			<select class="form-control input-sm select_language"  ng-options="language as language.code for language in tradLang" ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)"></select>
+			<select class="form-control input-sm select_language"  ng-options="language.code | translate for  language in tradLang" ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)"></select>
 
 <div class="row div_center">
 	<div class="col-md-2"></div>
@@ -26,7 +26,7 @@
 		  </div>
 		</div>
 		<form novalidate class="simple-form">
-			<select class="form-control input-sm select_language translator"  ng-options="language as language.label for language in languages" ng-show="result" ng-model="user.langue"  ></select>
+			<select class="form-control input-sm select_language translator"  ng-options="language.code | translate for language in languages" ng-show="result" ng-model="user.langue"  ></select>
 			<button type="submit" class="btn btn-primary"  ng-show="result" ng-click="translation(user.langue.code)">{{ 'TRANSLATION' | translate }}</button>
 			<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</button>
 		</form>
@@ -39,7 +39,7 @@
     <p>
     	{{ 'WRONG' | translate }}<br />
 		{{ 'SELECT' | translate }}
-		<select class="form-control input-sm select_language"  ng-options="language as language.label for language in languages" ng-model="user.langue2"></select>
+		<select class="form-control input-sm select_language"  ng-options="language.code | translate for language in languages" ng-model="user.langue2"></select>
 
 		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">{{ 'CORRECT' | translate }}</button>
   	</p>

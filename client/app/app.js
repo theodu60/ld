@@ -21,7 +21,8 @@ angular.module('ldApp', [
       SELECT: 'Select the correct language : ',
       CORRECT: 'Correct it',
       ANALYSE: 'Analyse',
-      TRANSLATION: 'Translate'
+      TRANSLATION: 'Translate',
+      fr: 'French'
     });
     $translateProvider.translations('fr', {
       TITLE: 'Langue trouvée : ',
@@ -29,7 +30,8 @@ angular.module('ldApp', [
       SELECT: 'Selectionner la langue : ',
       CORRECT: 'Corriger',
       ANALYSE: 'Analyser',
-      TRANSLATION: 'Traduire'
+      TRANSLATION: 'Traduire',
+      fr: 'Français'
     });
   $translateProvider.preferredLanguage('en');
     $locationProvider.html5Mode(true);
