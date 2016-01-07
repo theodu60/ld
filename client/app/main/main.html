@@ -31,7 +31,7 @@
       	<md-button md-no-ink="" class="md-raised md-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</md-button>
      </div>
 
-	<div flex="25">
+	<div flex="25" ng-show="result">
         <md-input-container class="md-block">
           <label>{{lang_title | translate}}</label>
           <textarea columns="1"  rows="5">{{result_trad | translate}}</textarea>
