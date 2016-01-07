@@ -5,22 +5,22 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
     $scope.tradLang = [
         {id: 0, code: 'en'},
         {id: 1, code: 'fr'},
+        {id: 2, code: 'zh'},
     ]
     
     var dynTrad = []
     dynTrad['fr'] = {
         thx: "Merci pour votre participation !",
         api : {
-            'Operation completed successfully': 'Requete ok',
-            'Invalid API key': 'Cle API invalide',
-            'Blocked API key': 'Cle API bloque',
-            'Exceeded the daily limit on the number of requests': 'Operation completed successfully',
-            'Exceeded the daily limit on the amount of translated text': 'Operation completed successfully',
-            'Exceeded the maximum text size': 'Operation completed successfully',
-            'The text cannot be translated': 'Operation completed successfully',
-            'The specified translation direction is not supported': 'Operation completed successfully'
-        },
-        notFound: 'Non trouvée'
+            'Operation completed successfully': 'Requête ok',
+            'Invalid API key': 'Clef API invalide',
+            'Blocked API key': 'Clef API bloqué',
+            'Exceeded the daily limit on the number of requests': 'Limite journalière de requêtes dépassée',
+            'Exceeded the daily limit on the amount of translated text': 'Limite journalière de nombre de caractères traduits dépassée',
+            'Exceeded the maximum text size': 'Limite de texte dépassée',
+            'The text cannot be translated': 'Le texte ne peut pas être traduit',
+            'The specified translation direction is not supported': 'Le language à traduire n\'est pas supporté'
+        }
     }
     dynTrad['en'] = {
         thx: "Thanks for your contribution !",
@@ -33,8 +33,20 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
             'Exceeded the maximum text size': 'Exceeded the maximum text size',
             'The text cannot be translated': 'The text cannot be translated',
             'The specified translation direction is not supported': 'The specified translation direction is not supported'
-        },
-        notFound: 'Not found'
+        }
+    }
+    dynTrad['zh'] = {
+        thx: "谢谢你的贡献!",
+        api : {
+            'Operation completed successfully': '行动成功完成',
+            'Invalid API key': '无效的单亲家庭的关键',
+            'Blocked API key': '封锁旅客信息系统的关键',
+            'Exceeded the daily limit on the number of requests': '超过了每日限额的请求数量',
+            'Exceeded the daily limit on the amount of translated text': '超过了每日限额的译文',
+            'Exceeded the maximum text size': '超过了最大限度的案文的规模',
+            'The text cannot be translated': '该案文不能被翻译',
+            'The specified translation direction is not supported': '在规定的翻译方面没有支持'
+        }
     }
 
     $scope.translated = function(p) {
@@ -60,7 +72,6 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
             input: $scope.user.text,
             ouput: $scope.user.langue2.id
         }).then(function() {
-            console.log($scope.user.langue2.label);
             $scope.lang_origine = $scope.user.langue2.code;
             $scope.result = $scope.user.langue2.code;
             toaster.pop('success', ": D", dynTrad[$scope.user.langueWebsite.code].thx);
