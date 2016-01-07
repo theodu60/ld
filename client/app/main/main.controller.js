@@ -56,6 +56,7 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
     $scope.user =  {
         text : '',
         langue: {},
+        langue2: {},
         langueWebsite: $scope.tradLang[0]
     };
     
@@ -102,14 +103,14 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
     };
     
     $scope.translation = function(lang_trad) {
-          var text = $scope.user.text.replace(" ", "+");
-          $scope.lang_title = $scope.user.langue.code;
-          $http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160105T142037Z.acb0d58429100cf0.f0b456919f6f9505be214b6e040fed51b1b2ed42&text=' + text + "&lang=" + $scope.lang_origine + "-" + lang_trad, {}).then(function(res) {
+        var text = $scope.user.text.replace(" ", "+");
+        $scope.lang_title = lang_trad;
+        $http.get('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160105T142037Z.acb0d58429100cf0.f0b456919f6f9505be214b6e040fed51b1b2ed42&text=' + text + "&lang=" + $scope.lang_origine + "-" + lang_trad, {}).then(function(res) {
             $scope.result_trad = res.data.text[0];
-            }).catch(function(error) {
-                $scope.result_trad = "";
-                toaster.pop('error', ":(", dynTrad[$scope.user.langueWebsite.code].api[error.data.message]);
-            })
+        }).catch(function(error) {
+            $scope.result_trad = "";
+            toaster.pop('error', ":(", dynTrad[$scope.user.langueWebsite.code].api[error.data.message]);
+        });
     };
     
     $scope.hideResult = function(){

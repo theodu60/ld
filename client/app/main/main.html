@@ -12,6 +12,7 @@
 	</div>
 </div>
 
+<div layout="row" style="height: 150px;"></div>
 
 <div layout="row" >
 	<div flex="10"></div>
@@ -35,9 +36,9 @@
           <label>{{lang_title | translate}}</label>
           <textarea columns="1"  rows="5">{{result_trad | translate}}</textarea>
         </md-input-container>
-  		<md-button md-no-ink="" class="md-raised md-primary" ng-click="translation(user.langue.code)">{{ 'TRANSLATION' | translate }}</md-button>
-		<md-input-container>
-			<md-select  ng-model="user.langue.code">
+  		<md-button md-no-ink="" class="md-raised md-primary" ng-click="translation(tradTo)">{{ 'TRANSLATION' | translate }}</md-button>
+		<md-input-container style="margin: 0px; !important">
+			<md-select  ng-model="tradTo" placeholder="{{ 'selectionTrad' | translate }}">
 				<md-option ng-repeat="language  in languages | orderBy:translated" value="{{language.code}}">
 					{{language.code | translate}}
 				</md-option>
@@ -46,30 +47,29 @@
 	</div>
 </div>
 <toaster-container></toaster-container>
-<div layout="row"><br></div>
+<div layout="row" style="height: 50px;"></div>
 <div layout="row"  ng-show="result">
-		<div flex="15"></div>
+	<div flex="40"></div>
 
-		<div flex="30">
-			<h3 ng-show="result">{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h3>
-		</div>
+	<div flex="40" align="center">
+		<h3 ng-show="result">{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h3>
+	</div>
 
-		<div flex="60">
-    <p>
+	<div flex="40"></div>
+</div>
+<div layout="row" ng-show="result">
+	<div flex="40"></div>
+    <div flex="40" align="center" style="position: absolute;bottom: 0px;">
     	{{ 'WRONG' | translate }}<br />
 		{{ 'SELECT' | translate }}
-			<md-input-container>
-				<md-select ng-show="result"  ng-model="user.langue2.code">
-					<md-option ng-repeat="language  in languages | orderBy:translated" value="{{language.code}}">
-						{{language.code | translate}}
-					</md-option>
-				</md-select>
-			</md-input-container>
-
-
-      <md-button md-no-ink="" class="md-raised md-primary" ng-click="correct()">{{ 'CORRECT' | translate }}</md-button>
-
-  	</p>
-
-		</div>
+		<md-input-container>
+			<md-select ng-show="result"  ng-model="user.langue2.code">
+				<md-option ng-repeat="language  in languages | orderBy:translated" value="{{language.code}}">
+					{{language.code | translate}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+      	<md-button md-no-ink="" class="md-raised md-primary" ng-click="correct()">{{ 'CORRECT' | translate }}</md-button>
+  	</div>
+  	<div flex="40"></div>
 </div>
