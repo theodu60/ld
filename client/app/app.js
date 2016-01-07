@@ -10,7 +10,8 @@ angular.module('ldApp', [
   'validation.match',
   'toaster',
   'ngAnimate',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'ngMaterial'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider,$translateProvider) {
     $urlRouterProvider
