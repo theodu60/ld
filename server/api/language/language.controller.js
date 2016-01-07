@@ -11,9 +11,9 @@
 
 var _ = require('lodash');
 var Language = require('./language.model');
-var cv = require('opencv')
+//var cv = require('opencv')
 var async = require('async')
-  var ml = require('machine_learning');
+var ml = require('machine_learning');
 
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
@@ -61,6 +61,7 @@ function removeEntity(res) {
     }
   };
 }
+/*
 function matrixToOne(matrix){
   var tab = []
   for (var i= 0; i< matrix.height(); i++){
@@ -126,7 +127,7 @@ console.log(request.length)
 console.log("prediction " + prediction)
   cb(alpha[prediction])
 }
-
+*/
 // Gets a list of Languages
 exports.index = function(req, res) {
 var nbFiles = [0,1,2,3,4,5,6,7]
@@ -172,9 +173,6 @@ var matrix = []
   });
 })
 */
-
-
-
   Language.find({}).sort({ label : 1})
     .then(responseWithResult(res))
 };
