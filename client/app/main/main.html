@@ -1,49 +1,74 @@
-<select class="form-control input-sm select_language multilangue"  
-		ng-options="language.code | translate for  language in tradLang" 
-		ng-model="user.langueWebsite" 
-		ng-change="changeLanguage(user.langueWebsite)">
-</select>
+<div layout="row" >
+	<div flex="90" ></div>
+	<div flex>
+		<md-input-container>
+			<label>{{user.langueWebsite.code | translate}}</label>
+			<md-select ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)">
+				<md-option ng-repeat="language  in tradLang" value="{{language.code}}">
+					{{language.code | translate}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+	</div>
+</div>
 
-<div class="row div_center">
-	<div class="col-md-2"></div>
-	<div class="col-md-4" align="center">
+
+<div layout="row" >
+	<div flex="10"></div>
+
+	<div flex="25">
 		<img id="logo_img" src="../../assets/images/logo.png">
 		<div class="message_found" align="center" ng-show="result">
-		<h1>{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h1>
-	</div>
-	</div>
-
-	<div class="col-md-4">
-  		<div class="panel-heading" ng-show="result_trad">
-	    	<h3 class="panel-title">{{result | translate}}</h3>
-	 	</div>
-		<textarea class="form-control textarea_text" rows="6" ng-model="user.text" ng-focus="hideResult()"></textarea>
-
-  		
-  		<div class="panel-heading" ng-show="result_trad">
-	    	<h3 class="panel-title">{{lang_title | translate}}</h3>
-	 	</div>
-		<div class="panel panel-default" ng-show="result_trad">
-		  <div class="panel-body">
-		    {{result_trad | translate}}
-		  </div>
+			<h1>{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h1>
 		</div>
-		<form novalidate class="simple-form">
-			<select class="form-control input-sm select_language translator"  ng-options="language.code | translate for language in languages | orderBy:translated" ng-show="result" ng-model="user.langue"  ></select>
-			<button type="submit" class="btn btn-primary"  ng-show="result" ng-click="translation(user.langue.code)">{{ 'TRANSLATION' | translate }}</button>
-			<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</button>
-		</form>
 	</div>
-	<div class="col-md-2"></div>
+
+	<div flex="25">
+        <md-input-container class="md-block">
+          <label>{{ 'ENTERTEXTE' | translate }}</label>
+          <textarea ng-model="user.text" ng-focus="hideResult()" columns="1"  rows="5"></textarea>
+        </md-input-container>
+      	<md-button md-no-ink="" class="md-raised md-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</md-button>
+     </div>
+
+	<div flex="25">
+        <md-input-container class="md-block">
+          <label>{{lang_title | translate}}</label>
+          <textarea columns="1"  rows="5">{{result_trad | translate}}</textarea>
+        </md-input-container>
+  		<md-button md-no-ink="" class="md-raised md-primary" ng-click="translation(user.langue.code)">{{ 'TRANSLATION' | translate }}</md-button>
+		<md-input-container>
+			<md-select  ng-model="user.langue.code">
+				<md-option ng-repeat="language  in languages | orderBy:translated" value="{{language.code}}">
+					{{language.code | translate}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+	</div>
+
+	<div flex="20"></div>
 </div>
 <toaster-container></toaster-container>
 
-<div class="wrong_language" ng-show="result">
+<div layout="row"  ng-show="result">
+		<div flex="40"></div>
+
+		<div flex="60">
     <p>
     	{{ 'WRONG' | translate }}<br />
 		{{ 'SELECT' | translate }}
-		<select class="form-control input-sm select_language"  ng-options="language.code | translate for language in languages | orderBy:translated" ng-model="user.langue2"></select>
+			<md-input-container>
+				<md-select ng-show="result"  ng-model="user.langue2.code">
+					<md-option ng-repeat="language  in languages | orderBy:translated" value="{{language.code}}">
+						{{language.code | translate}}
+					</md-option>
+				</md-select>
+			</md-input-container>
 
-		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">{{ 'CORRECT' | translate }}</button>
+
+      <md-button md-no-ink="" class="md-raised md-primary" ng-click="correct()">{{ 'CORRECT' | translate }}</md-button>
+
   	</p>
+
+		</div>
 </div>
