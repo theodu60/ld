@@ -3,8 +3,7 @@
 	<div flex></div>
 	<div flex="20">
 		<md-input-container>
-			<label>{{user.langueWebsite.code | translate}}</label>
-			<md-select ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)">
+			<md-select ng-model="user.langueWebsite" ng-change="changeLanguage(user.langueWebsite)" ng-change="update()">
 				<md-option ng-repeat="language  in tradLang" value="{{language.code}}">
 					{{language.code | translate}}
 				</md-option>

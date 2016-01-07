@@ -57,7 +57,7 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
         text : '',
         langue: {},
         langue2: {},
-        langueWebsite: $scope.tradLang[0]
+        langueWebsite: $scope.tradLang[0].code
     };
     
     $scope.changeLanguage = function (key) {
@@ -85,8 +85,7 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
         }).then(function() {
             $scope.lang_origine = $scope.user.langue2.code;
             $scope.result = $scope.user.langue2.code;
-            console.log(dynTrad[$scope.user.langueWebsite.code])
-            toaster.pop('success', ": D", dynTrad[$scope.user.langueWebsite.code].thx);
+            toaster.pop('success', ": D", dynTrad[$scope.user.langueWebsite].thx);
         });
     };
     
