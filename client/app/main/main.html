@@ -8,7 +8,6 @@
 	<div class="col-md-2"></div>
 	<div class="col-md-4" align="center">
 		<img id="logo_img" src="../../assets/images/logo.png">
-
 		<div class="message_found" align="center" ng-show="result">
 		<h1>{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h1>
 	</div>
@@ -30,7 +29,7 @@
 		  </div>
 		</div>
 		<form novalidate class="simple-form">
-			<select class="form-control input-sm select_language translator"  ng-options="language.code | translate for language in languages" ng-show="result" ng-model="user.langue"  ></select>
+			<select class="form-control input-sm select_language translator"  ng-options="language.code | translate for language in languages | orderBy:translated" ng-show="result" ng-model="user.langue"  ></select>
 			<button type="submit" class="btn btn-primary"  ng-show="result" ng-click="translation(user.langue.code)">{{ 'TRANSLATION' | translate }}</button>
 			<button id="btn-submit" type="submit" class="btn btn-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</button>
 		</form>
@@ -43,7 +42,7 @@
     <p>
     	{{ 'WRONG' | translate }}<br />
 		{{ 'SELECT' | translate }}
-		<select class="form-control input-sm select_language"  ng-options="language.code | translate for language in languages" ng-model="user.langue2"></select>
+		<select class="form-control input-sm select_language"  ng-options="language.code | translate for language in languages | orderBy:translated" ng-model="user.langue2"></select>
 
 		<button type="submit" class="btn btn-primary btn-sm" ng-click="correct()">{{ 'CORRECT' | translate }}</button>
   	</p>

@@ -1,7 +1,7 @@
 'use strict';
 (function() {
 
-function MainController($scope, $http, socket, toaster,$translate) {
+function MainController($scope, $http, socket, toaster,$translate,$filter) {
     $scope.tradLang = [
         {id: 0, code: 'en'},
         {id: 1, code: 'fr'},
@@ -36,7 +36,11 @@ function MainController($scope, $http, socket, toaster,$translate) {
         },
         notFound: 'Not found'
     }
-    
+
+    $scope.translated = function(p) {
+      return $filter('translate')(p.code);
+    }
+
     $scope.user =  {
         text : '',
         langue: {},

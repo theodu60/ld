@@ -11,7 +11,7 @@
 
 var _ = require('lodash');
 var Language = require('./language.model');
-//var cv = require('opencv')
+var cv = require('opencv')
 var async = require('async')
 var ml = require('machine_learning');
 
@@ -61,7 +61,7 @@ function removeEntity(res) {
     }
   };
 }
-/*
+
 function matrixToOne(matrix){
   var tab = []
   for (var i= 0; i< matrix.height(); i++){
@@ -85,21 +85,23 @@ var parseImg = function (path, cb){
     for(var c = 0; c < contours.size(); ++c) {
         if (!tab[c])
           tab[c] = []
-
         var m = new cv.Matrix(contours.boundingRect(c).width, contours.boundingRect(c).height)
         for (var i= contours.boundingRect(c).x; i< contours.boundingRect(c).width; i++){
           for (var y= contours.boundingRect(c).y; y< contours.boundingRect(c).height; y++){
-            m.set(i,y)
             if (im.get(i,y)){
               tab[c].push(im.get(i,y))
             }else{
               tab[c].push(0)
             }
-
           }
         }
     }
-      cb(tab)
+    var good = []
+
+    for (var i = 0; i < 400; i++)
+      good.push(tab[i])
+    
+      cb(good)
   })
 }
 function magique(matrix, request, cb){
@@ -127,7 +129,7 @@ console.log(request.length)
 console.log("prediction " + prediction)
   cb(alpha[prediction])
 }
-*/
+
 // Gets a list of Languages
 exports.index = function(req, res) {
 var nbFiles = [0,1,2,3,4,5,6,7]
