@@ -71,9 +71,16 @@ function MainController($scope, $http, socket, toaster,$translate,$filter) {
     });
     
     $scope.correct = function (){
+        var id;
+
+        for(var i in $scope.languages){
+          if ($scope.languages[i].code == $scope.user.langue2.code)
+            id = $scope.languages[i].id
+        }
+
         $http.post('/api/detects', {
             input: $scope.user.text,
-            ouput: $scope.user.langue2.id
+            ouput: id
         }).then(function() {
             $scope.lang_origine = $scope.user.langue2.code;
             $scope.result = $scope.user.langue2.code;
