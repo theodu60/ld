@@ -9,11 +9,1519 @@ import User from '../api/user/user.model';
 import Language from '../api/language/language.model';
 import Detect from '../api/detect/detect.model';
 
-Detect.find({}).removeAsync();
-
+Detect.find({}).removeAsync()
+  .then(function() {
+    Detect.create(
+    {
+    "ouput" : 58,
+    "freq" : [ 
+        {
+            "label" : "t",
+            "value" : 0.0705421293272371
+        }, 
+        {
+            "label" : "e",
+            "value" : 0.1521881123448726
+        }, 
+        {
+            "label" : "D",
+            "value" : 0.0013063357282822
+        }, 
+        {
+            "label" : "h",
+            "value" : 0.0117570215545395
+        }, 
+        {
+            "label" : "o",
+            "value" : 0.0489875898105813
+        }, 
+        {
+            "label" : "r",
+            "value" : 0.0568256041802743
+        }, 
+        {
+            "label" : "s",
+            "value" : 0.0757674722403658
+        }, 
+        {
+            "label" : "l",
+            "value" : 0.0613977792292619
+        }, 
+        {
+            "label" : "a",
+            "value" : 0.0849118223383410
+        }, 
+        {
+            "label" : "u",
+            "value" : 0.0679294578706728
+        }, 
+        {
+            "label" : "m",
+            "value" : 0.0287393860222077
+        }, 
+        {
+            "label" : "i",
+            "value" : 0.0711952971913782
+        }, 
+        {
+            "label" : "è",
+            "value" : 0.0045721750489876
+        }, 
+        {
+            "label" : "d",
+            "value" : 0.0391900718484651
+        }, 
+        {
+            "label" : "é",
+            "value" : 0.0130633572828217
+        }, 
+        {
+            "label" : "n",
+            "value" : 0.0744611365120836
+        }, 
+        {
+            "label" : "v",
+            "value" : 0.0176355323318093
+        }, 
+        {
+            "label" : "p",
+            "value" : 0.0254735467015023
+        }, 
+        {
+            "label" : "c",
+            "value" : 0.0280862181580666
+        }, 
+        {
+            "label" : "f",
+            "value" : 0.0104506858262573
+        }, 
+        {
+            "label" : "g",
+            "value" : 0.0104506858262573
+        }, 
+        {
+            "label" : "b",
+            "value" : 0.0065316786414108
+        }, 
+        {
+            "label" : "y",
+            "value" : 0.0006531678641411
+        }, 
+        {
+            "label" : "R",
+            "value" : 0.0013063357282822
+        }, 
+        {
+            "label" : "à",
+            "value" : 0.0039190071848465
+        }, 
+        {
+            "label" : "M",
+            "value" : 0.0019595035924233
+        }, 
+        {
+            "label" : "q",
+            "value" : 0.0117570215545395
+        }, 
+        {
+            "label" : "E",
+            "value" : 0.0032658393207054
+        }, 
+        {
+            "label" : "j",
+            "value" : 0.0045721750489876
+        }, 
+        {
+            "label" : "V",
+            "value" : 0.0013063357282822
+        }, 
+        {
+            "label" : "x",
+            "value" : 0.0058785107772698
+        }, 
+        {
+            "label" : "H",
+            "value" : 0.0006531678641411
+        }, 
+        {
+            "label" : "z",
+            "value" : 0.0019595035924233
+        }, 
+        {
+            "label" : "S",
+            "value" : 0.0006531678641411
+        }, 
+        {
+            "label" : "N",
+            "value" : 0.0006531678641411
+        }, 
+        {
+            "label" : "ë",
+            "value" : 0
+        }, 
+        {
+            "label" : "k",
+            "value" : 0
+        }, 
+        {
+            "label" : "w",
+            "value" : 0
+        }, 
+        {
+            "label" : "A",
+            "value" : 0
+        }, 
+        {
+            "label" : "B",
+            "value" : 0
+        }, 
+        {
+            "label" : "C",
+            "value" : 0
+        }, 
+        {
+            "label" : "F",
+            "value" : 0
+        }, 
+        {
+            "label" : "G",
+            "value" : 0
+        }, 
+        {
+            "label" : "I",
+            "value" : 0
+        }, 
+        {
+            "label" : "J",
+            "value" : 0
+        }, 
+        {
+            "label" : "K",
+            "value" : 0
+        }, 
+        {
+            "label" : "L",
+            "value" : 0
+        }, 
+        {
+            "label" : "O",
+            "value" : 0
+        }, 
+        {
+            "label" : "P",
+            "value" : 0
+        }, 
+        {
+            "label" : "Q",
+            "value" : 0
+        }, 
+        {
+            "label" : "T",
+            "value" : 0
+        }, 
+        {
+            "label" : "U",
+            "value" : 0
+        }, 
+        {
+            "label" : "W",
+            "value" : 0
+        }, 
+        {
+            "label" : "X",
+            "value" : 0
+        }, 
+        {
+            "label" : "Y",
+            "value" : 0
+        }, 
+        {
+            "label" : "Z",
+            "value" : 0
+        }, 
+        {
+            "label" : "А",
+            "value" : 0
+        }, 
+        {
+            "label" : "Б",
+            "value" : 0
+        }, 
+        {
+            "label" : "В",
+            "value" : 0
+        }, 
+        {
+            "label" : "Г",
+            "value" : 0
+        }, 
+        {
+            "label" : "Д",
+            "value" : 0
+        }, 
+        {
+            "label" : "Е",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ё",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ж",
+            "value" : 0
+        }, 
+        {
+            "label" : "З",
+            "value" : 0
+        }, 
+        {
+            "label" : "И",
+            "value" : 0
+        }, 
+        {
+            "label" : "Й",
+            "value" : 0
+        }, 
+        {
+            "label" : "К",
+            "value" : 0
+        }, 
+        {
+            "label" : "Л",
+            "value" : 0
+        }, 
+        {
+            "label" : "М",
+            "value" : 0
+        }, 
+        {
+            "label" : "Н",
+            "value" : 0
+        }, 
+        {
+            "label" : "О",
+            "value" : 0
+        }, 
+        {
+            "label" : "П",
+            "value" : 0
+        }, 
+        {
+            "label" : "Р",
+            "value" : 0
+        }, 
+        {
+            "label" : "С",
+            "value" : 0
+        }, 
+        {
+            "label" : "Т",
+            "value" : 0
+        }, 
+        {
+            "label" : "У",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ф",
+            "value" : 0
+        }, 
+        {
+            "label" : "Х",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ц",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ч",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ш",
+            "value" : 0
+        }, 
+        {
+            "label" : "Щ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ъ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ы",
+            "value" : 0
+        }, 
+        {
+            "label" : "Э",
+            "value" : 0
+        }, 
+        {
+            "label" : "Я",
+            "value" : 0
+        }, 
+        {
+            "label" : "а",
+            "value" : 0
+        }, 
+        {
+            "label" : "б",
+            "value" : 0
+        }, 
+        {
+            "label" : "в",
+            "value" : 0
+        }, 
+        {
+            "label" : "г",
+            "value" : 0
+        }, 
+        {
+            "label" : "д",
+            "value" : 0
+        }, 
+        {
+            "label" : "е",
+            "value" : 0
+        }, 
+        {
+            "label" : "ё",
+            "value" : 0
+        }, 
+        {
+            "label" : "ж",
+            "value" : 0
+        }, 
+        {
+            "label" : "з",
+            "value" : 0
+        }, 
+        {
+            "label" : "и",
+            "value" : 0
+        }, 
+        {
+            "label" : "й",
+            "value" : 0
+        }, 
+        {
+            "label" : "к",
+            "value" : 0
+        }, 
+        {
+            "label" : "л",
+            "value" : 0
+        }, 
+        {
+            "label" : "м",
+            "value" : 0
+        }, 
+        {
+            "label" : "н",
+            "value" : 0
+        }, 
+        {
+            "label" : "о",
+            "value" : 0
+        }, 
+        {
+            "label" : "п",
+            "value" : 0
+        }, 
+        {
+            "label" : "р",
+            "value" : 0
+        }, 
+        {
+            "label" : "с",
+            "value" : 0
+        }, 
+        {
+            "label" : "т",
+            "value" : 0
+        }, 
+        {
+            "label" : "у",
+            "value" : 0
+        }, 
+        {
+            "label" : "ф",
+            "value" : 0
+        }, 
+        {
+            "label" : "х",
+            "value" : 0
+        }, 
+        {
+            "label" : "ц",
+            "value" : 0
+        }, 
+        {
+            "label" : "ч",
+            "value" : 0
+        }, 
+        {
+            "label" : "ш",
+            "value" : 0
+        }, 
+        {
+            "label" : "щ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ъ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ы",
+            "value" : 0
+        }, 
+        {
+            "label" : "阿",
+            "value" : 0
+        }, 
+        {
+            "label" : "贝",
+            "value" : 0
+        }, 
+        {
+            "label" : "色",
+            "value" : 0
+        }, 
+        {
+            "label" : "德",
+            "value" : 0
+        }, 
+        {
+            "label" : "饿",
+            "value" : 0
+        }, 
+        {
+            "label" : "艾",
+            "value" : 0
+        }, 
+        {
+            "label" : "弗",
+            "value" : 0
+        }, 
+        {
+            "label" : "日",
+            "value" : 0
+        }, 
+        {
+            "label" : "什",
+            "value" : 0
+        }, 
+        {
+            "label" : "伊",
+            "value" : 0
+        }, 
+        {
+            "label" : "鸡",
+            "value" : 0
+        }, 
+        {
+            "label" : "卡",
+            "value" : 0
+        }, 
+        {
+            "label" : "勒",
+            "value" : 0
+        }, 
+        {
+            "label" : "马",
+            "value" : 0
+        }, 
+        {
+            "label" : "娜",
+            "value" : 0
+        }, 
+        {
+            "label" : "哦",
+            "value" : 0
+        }, 
+        {
+            "label" : "佩",
+            "value" : 0
+        }, 
+        {
+            "label" : "苦",
+            "value" : 0
+        }, 
+        {
+            "label" : "和",
+            "value" : 0
+        }, 
+        {
+            "label" : "丝",
+            "value" : 0
+        }, 
+        {
+            "label" : "特",
+            "value" : 0
+        }, 
+        {
+            "label" : "玉",
+            "value" : 0
+        }, 
+        {
+            "label" : "维",
+            "value" : 0
+        }, 
+        {
+            "label" : "独",
+            "value" : 0
+        }, 
+        {
+            "label" : "布",
+            "value" : 0
+        }, 
+        {
+            "label" : "克",
+            "value" : 0
+        }, 
+        {
+            "label" : "斯",
+            "value" : 0
+        }, 
+        {
+            "label" : "格",
+            "value" : 0
+        }, 
+        {
+            "label" : "黑",
+            "value" : 0
+        }, 
+        {
+            "label" : "贼",
+            "value" : 0
+        }, 
+        {
+            "label" : "あ",
+            "value" : 0
+        }, 
+        {
+            "label" : "か",
+            "value" : 0
+        }, 
+        {
+            "label" : "さ",
+            "value" : 0
+        }, 
+        {
+            "label" : "た",
+            "value" : 0
+        }, 
+        {
+            "label" : "な",
+            "value" : 0
+        }, 
+        {
+            "label" : "は",
+            "value" : 0
+        }, 
+        {
+            "label" : "ま",
+            "value" : 0
+        }, 
+        {
+            "label" : "や",
+            "value" : 0
+        }, 
+        {
+            "label" : "ら",
+            "value" : 0
+        }, 
+        {
+            "label" : "わ",
+            "value" : 0
+        }, 
+        {
+            "label" : "が",
+            "value" : 0
+        }, 
+        {
+            "label" : "ざ",
+            "value" : 0
+        }, 
+        {
+            "label" : "だ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ば",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぱ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ア",
+            "value" : 0
+        }, 
+        {
+            "label" : "カ",
+            "value" : 0
+        }, 
+        {
+            "label" : "サ",
+            "value" : 0
+        }, 
+        {
+            "label" : "タ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ナ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ハ",
+            "value" : 0
+        }, 
+        {
+            "label" : "マ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヤ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ラ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ワ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ガ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ザ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ダ",
+            "value" : 0
+        }, 
+        {
+            "label" : "バ",
+            "value" : 0
+        }, 
+        {
+            "label" : "パ",
+            "value" : 0
+        }, 
+        {
+            "label" : "い",
+            "value" : 0
+        }, 
+        {
+            "label" : "き",
+            "value" : 0
+        }, 
+        {
+            "label" : "し",
+            "value" : 0
+        }, 
+        {
+            "label" : "ち",
+            "value" : 0
+        }, 
+        {
+            "label" : "に",
+            "value" : 0
+        }, 
+        {
+            "label" : "ひ",
+            "value" : 0
+        }, 
+        {
+            "label" : "み",
+            "value" : 0
+        }, 
+        {
+            "label" : "り",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゐ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぎ",
+            "value" : 0
+        }, 
+        {
+            "label" : "じ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぢ",
+            "value" : 0
+        }, 
+        {
+            "label" : "び",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぴ",
+            "value" : 0
+        }, 
+        {
+            "label" : "イ",
+            "value" : 0
+        }, 
+        {
+            "label" : "キ",
+            "value" : 0
+        }, 
+        {
+            "label" : "シ",
+            "value" : 0
+        }, 
+        {
+            "label" : "チ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ニ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヒ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ミ",
+            "value" : 0
+        }, 
+        {
+            "label" : "リ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヰ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ギ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ジ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヂ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ビ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ピ",
+            "value" : 0
+        }, 
+        {
+            "label" : "う",
+            "value" : 0
+        }, 
+        {
+            "label" : "く",
+            "value" : 0
+        }, 
+        {
+            "label" : "す",
+            "value" : 0
+        }, 
+        {
+            "label" : "つ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぬ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ふ",
+            "value" : 0
+        }, 
+        {
+            "label" : "む",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゆ",
+            "value" : 0
+        }, 
+        {
+            "label" : "る",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぐ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ず",
+            "value" : 0
+        }, 
+        {
+            "label" : "づ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぶ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぷ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ウ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ク",
+            "value" : 0
+        }, 
+        {
+            "label" : "ス",
+            "value" : 0
+        }, 
+        {
+            "label" : "ツ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヌ",
+            "value" : 0
+        }, 
+        {
+            "label" : "フ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ム",
+            "value" : 0
+        }, 
+        {
+            "label" : "ユ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ル",
+            "value" : 0
+        }, 
+        {
+            "label" : "グ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ズ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヅ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ブ",
+            "value" : 0
+        }, 
+        {
+            "label" : "プ",
+            "value" : 0
+        }, 
+        {
+            "label" : "え",
+            "value" : 0
+        }, 
+        {
+            "label" : "け",
+            "value" : 0
+        }, 
+        {
+            "label" : "せ",
+            "value" : 0
+        }, 
+        {
+            "label" : "て",
+            "value" : 0
+        }, 
+        {
+            "label" : "ね",
+            "value" : 0
+        }, 
+        {
+            "label" : "へ",
+            "value" : 0
+        }, 
+        {
+            "label" : "め",
+            "value" : 0
+        }, 
+        {
+            "label" : "れ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゑ",
+            "value" : 0
+        }, 
+        {
+            "label" : "げ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぜ",
+            "value" : 0
+        }, 
+        {
+            "label" : "で",
+            "value" : 0
+        }, 
+        {
+            "label" : "べ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぺ",
+            "value" : 0
+        }, 
+        {
+            "label" : "エ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ケ",
+            "value" : 0
+        }, 
+        {
+            "label" : "セ",
+            "value" : 0
+        }, 
+        {
+            "label" : "テ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ネ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヘ",
+            "value" : 0
+        }, 
+        {
+            "label" : "メ",
+            "value" : 0
+        }, 
+        {
+            "label" : "レ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヱ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゲ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゼ",
+            "value" : 0
+        }, 
+        {
+            "label" : "デ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ベ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ペ",
+            "value" : 0
+        }, 
+        {
+            "label" : "お",
+            "value" : 0
+        }, 
+        {
+            "label" : "こ",
+            "value" : 0
+        }, 
+        {
+            "label" : "そ",
+            "value" : 0
+        }, 
+        {
+            "label" : "と",
+            "value" : 0
+        }, 
+        {
+            "label" : "の",
+            "value" : 0
+        }, 
+        {
+            "label" : "ほ",
+            "value" : 0
+        }, 
+        {
+            "label" : "も",
+            "value" : 0
+        }, 
+        {
+            "label" : "よ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ろ",
+            "value" : 0
+        }, 
+        {
+            "label" : "を",
+            "value" : 0
+        }, 
+        {
+            "label" : "ん",
+            "value" : 0
+        }, 
+        {
+            "label" : "ご",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぞ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ど",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぼ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ぽ",
+            "value" : 0
+        }, 
+        {
+            "label" : "オ",
+            "value" : 0
+        }, 
+        {
+            "label" : "コ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ソ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ト",
+            "value" : 0
+        }, 
+        {
+            "label" : "ノ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ホ",
+            "value" : 0
+        }, 
+        {
+            "label" : "モ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヨ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ロ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ヲ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ン",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゴ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゾ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ド",
+            "value" : 0
+        }, 
+        {
+            "label" : "ボ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ポ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゃ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ャ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ゅ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ュ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ょ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ョ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺍ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺏ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺕ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺙ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺝ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺡ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺥ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺩ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺫ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺭ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺯ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺱ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺵ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺹ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﺽ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻁ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻅ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻉ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻍ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻑ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻕ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻙ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻝ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻡ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻥ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻩ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻭ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ﻱ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ء",
+            "value" : 0
+        }, 
+        {
+            "label" : "‎",
+            "value" : 0
+        }, 
+        {
+            "label" : "Γ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Δ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ε",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ζ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Η",
+            "value" : 0
+        }, 
+        {
+            "label" : "Θ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ι",
+            "value" : 0
+        }, 
+        {
+            "label" : "Κ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Λ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ν",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ξ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ο",
+            "value" : 0
+        }, 
+        {
+            "label" : "Π",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ρ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Σ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Τ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Υ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Φ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Χ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ψ",
+            "value" : 0
+        }, 
+        {
+            "label" : "Ω",
+            "value" : 0
+        }, 
+        {
+            "label" : "α",
+            "value" : 0
+        }, 
+        {
+            "label" : "β",
+            "value" : 0
+        }, 
+        {
+            "label" : "ϐ",
+            "value" : 0
+        }, 
+        {
+            "label" : "γ",
+            "value" : 0
+        }, 
+        {
+            "label" : "δ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ε",
+            "value" : 0
+        }, 
+        {
+            "label" : "ζ",
+            "value" : 0
+        }, 
+        {
+            "label" : "η",
+            "value" : 0
+        }, 
+        {
+            "label" : "θ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ι",
+            "value" : 0
+        }, 
+        {
+            "label" : "κ",
+            "value" : 0
+        }, 
+        {
+            "label" : "λ",
+            "value" : 0
+        }, 
+        {
+            "label" : "μ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ν",
+            "value" : 0
+        }, 
+        {
+            "label" : "ξ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ο",
+            "value" : 0
+        }, 
+        {
+            "label" : "π",
+            "value" : 0
+        }, 
+        {
+            "label" : "ρ",
+            "value" : 0
+        }, 
+        {
+            "label" : "σ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ς",
+            "value" : 0
+        }, 
+        {
+            "label" : "τ",
+            "value" : 0
+        }, 
+        {
+            "label" : "υ",
+            "value" : 0
+        }, 
+        {
+            "label" : "φ",
+            "value" : 0
+        }, 
+        {
+            "label" : "χ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ψ",
+            "value" : 0
+        }, 
+        {
+            "label" : "ω",
+            "value" : 0
+        }
+    ]
+}
+    )
+  });
 Language.find({}).removeAsync()
   .then(function() {
-    Language.create({"id":0,"code":"--","label":"Not Found"}, {"id":1,"code":"ab","label":"ABKHAZIAN"},{"id":2,"code":"aa","label":"AFAR"},{"id":3,"code":"af","label":"AFRIKAANS"},{"id":4,"code":"ak","label":"AKAN"},{"id":5,"code":"sq","label":"ALBANIAN"},{"id":6,"code":"am","label":"AMHARIC"},{"id":7,"code":"ar","label":"ARABIC"},{"id":8,"code":"hy","label":"ARMENIAN"},{"id":9,"code":"as","label":"ASSAMESE"},{"id":10,"code":"ay","label":"AYMARA"},{"id":11,"code":"az","label":"AZERBAIJANI"},{"id":12,"code":"ba","label":"BASHKIR"},{"id":13,"code":"eu","label":"BASQUE"},{"id":14,"code":"be","label":"BELARUSIAN"},{"id":15,"code":"bn","label":"BENGALI"},{"id":16,"code":"bh","label":"BIHARI"},{"id":17,"code":"bi","label":"BISLAMA"},{"id":18,"code":"bs","label":"BOSNIAN"},{"id":19,"code":"br","label":"BRETON"},{"id":20,"code":"bg","label":"BULGARIAN"},{"id":21,"code":"my","label":"BURMESE"},{"id":22,"code":"ca","label":"CATALAN"},{"id":23,"code":"ceb","label":"CEBUANO"},{"id":24,"code":"chr","label":"CHEROKEE"},{"id":25,"code":"co","label":"CORSICAN"},{"id":26,"code":"hr","label":"CROATIAN"},{"id":27,"code":"cs","label":"CZECH"},{"id":28,"code":"zh","label":"CHINESE"},{"id":29,"code":"zh-Hant","label":"CHINESET"},{"id":30,"code":"da","label":"DANISH"},{"id":31,"code":"dv","label":"DHIVEHI"},{"id":32,"code":"nl","label":"DUTCH"},{"id":33,"code":"dz","label":"DZONGKHA"},{"id":34,"code":"en","label":"ENGLISH"},{"id":35,"code":"eo","label":"ESPERANTO"},{"id":36,"code":"et","label":"ESTONIAN"},{"id":37,"code":"fo","label":"FAROESE"},{"id":38,"code":"fj","label":"FIJIAN"},{"id":39,"code":"fi","label":"FINNISH"},{"id":40,"code":"fr","label":"FRENCH"},{"id":41,"code":"fy","label":"FRISIAN"},{"id":42,"code":"gl","label":"GALICIAN"},{"id":43,"code":"lg","label":"GANDA"},{"id":44,"code":"ka","label":"GEORGIAN"},{"id":45,"code":"de","label":"GERMAN"},{"id":46,"code":"el","label":"GREEK"},{"id":47,"code":"kl","label":"GREENLANDIC"},{"id":48,"code":"gn","label":"GUARANI"},{"id":49,"code":"gu","label":"GUJARATI"},{"id":50,"code":"ht","label":"HAITIAN_CREOLE"},{"id":51,"code":"ha","label":"HAUSA"},{"id":52,"code":"haw","label":"HAWAIIAN"},{"id":53,"code":"iw","label":"HEBREW"},{"id":54,"code":"hi","label":"HINDI"},{"id":55,"code":"hmn","label":"HMONG"},{"id":56,"code":"hu","label":"HUNGARIAN"},{"id":57,"code":"is","label":"ICELANDIC"},{"id":58,"code":"ig","label":"IGBO"},{"id":59,"code":"id","label":"INDONESIAN"},{"id":60,"code":"ia","label":"INTERLINGUA"},{"id":61,"code":"ie","label":"INTERLINGUE"},{"id":62,"code":"iu","label":"INUKTITUT"},{"id":63,"code":"ik","label":"INUPIAK"},{"id":64,"code":"ga","label":"IRISH"},{"id":65,"code":"it","label":"ITALIAN"},{"id":66,"code":"jw","label":"JAVANESE"},{"id":67,"code":"ja","label":"JAPANESE"},{"id":68,"code":"kn","label":"KANNADA"},{"id":69,"code":"ks","label":"KASHMIRI"},{"id":70,"code":"kk","label":"KAZAKH"},{"id":71,"code":"kha","label":"KHASI"},{"id":72,"code":"km","label":"KHMER"},{"id":73,"code":"rw","label":"KINYARWANDA"},{"id":74,"code":"ku","label":"KURDISH"},{"id":75,"code":"ky","label":"KYRGYZ"},{"id":76,"code":"ko","label":"KOREAN"},{"id":77,"code":"lo","label":"LAOTHIAN"},{"id":78,"code":"la","label":"LATIN"},{"id":79,"code":"lv","label":"LATVIAN"},{"id":80,"code":"lif","label":"LIMBU"},{"id":81,"code":"ln","label":"LINGALA"},{"id":82,"code":"lt","label":"LITHUANIAN"},{"id":83,"code":"lb","label":"LUXEMBOURGISH"},{"id":84,"code":"mk","label":"MACEDONIAN"},{"id":85,"code":"mg","label":"MALAGASY"},{"id":86,"code":"ms","label":"MALAY"},{"id":87,"code":"ml","label":"MALAYALAM"},{"id":88,"code":"mt","label":"MALTESE"},{"id":89,"code":"gv","label":"MANX"},{"id":90,"code":"mi","label":"MAORI"},{"id":91,"code":"mr","label":"MARATHI"},{"id":92,"code":"mfe","label":"MAURITIAN_CREOLE"},{"id":93,"code":"mn","label":"MONGOLIAN"},{"id":94,"code":"na","label":"NAURU"},{"id":95,"code":"nr","label":"NDEBELE"},{"id":96,"code":"ne","label":"NEPALI"},{"id":97,"code":"no","label":"NORWEGIAN"},{"id":98,"code":"ny","label":"NYANJA"},{"id":99,"code":"oc","label":"OCCITAN"},{"id":100,"code":"or","label":"ORIYA"},{"id":101,"code":"om","label":"OROMO"},{"id":102,"code":"ps","label":"PASHTO"},{"id":103,"code":"nso","label":"PEDI"},{"id":104,"code":"fa","label":"PERSIAN"},{"id":105,"code":"pl","label":"POLISH"},{"id":106,"code":"pt","label":"PORTUGUESE"},{"id":107,"code":"pa","label":"PUNJABI"},{"id":108,"code":"qu","label":"QUECHUA"},{"id":109,"code":"rm","label":"RHAETO_ROMANCE"},{"id":110,"code":"ro","label":"ROMANIAN"},{"id":111,"code":"rn","label":"RUNDI"},{"id":112,"code":"ru","label":"RUSSIAN"},{"id":113,"code":"sm","label":"SAMOAN"},{"id":114,"code":"sg","label":"SANGO"},{"id":115,"code":"sa","label":"SANSKRIT"},{"id":116,"code":"sco","label":"SCOTS"},{"id":117,"code":"gd","label":"SCOTS_GAELIC"},{"id":118,"code":"sr","label":"SERBIAN"},{"id":119,"code":"crs","label":"SESELWA"},{"id":120,"code":"st","label":"SESOTHO"},{"id":121,"code":"sn","label":"SHONA"},{"id":122,"code":"sd","label":"SINDHI"},{"id":123,"code":"si","label":"SINHALESE"},{"id":124,"code":"ss","label":"SISWANT"},{"id":125,"code":"sk","label":"SLOVAK"},{"id":126,"code":"sl","label":"SLOVENIAN"},{"id":127,"code":"so","label":"SOMALI"},{"id":128,"code":"es","label":"SPANISH"},{"id":129,"code":"su","label":"SUNDANESE"},{"id":130,"code":"sw","label":"SWAHILI"},{"id":131,"code":"sv","label":"SWEDISH"},{"id":132,"code":"syr","label":"SYRIAC"},{"id":133,"code":"tl","label":"TAGALOG"},{"id":134,"code":"tg","label":"TAJIK"},{"id":135,"code":"ta","label":"TAMIL"},{"id":136,"code":"tt","label":"TATAR"},{"id":137,"code":"te","label":"TELUGU"},{"id":138,"code":"th","label":"THAI"},{"id":139,"code":"bo","label":"TIBETAN"},{"id":140,"code":"ti","label":"TIGRINYA"},{"id":141,"code":"to","label":"TONGA"},{"id":142,"code":"ts","label":"TSONGA"},{"id":143,"code":"tn","label":"TSWANA"},{"id":144,"code":"tr","label":"TURKISH"},{"id":145,"code":"tk","label":"TURKMEN"},{"id":146,"code":"ug","label":"UIGHUR"},{"id":147,"code":"uk","label":"UKRAINIAN"},{"id":148,"code":"ur","label":"URDU"},{"id":149,"code":"uz","label":"UZBEK"},{"id":150,"code":"ve","label":"VENDA"},{"id":151,"code":"vi","label":"VIETNAMESE"},{"id":152,"code":"vo","label":"VOLAPUK"},{"id":153,"code":"war","label":"WARAY_PHILIPPINES"},{"id":154,"code":"cy","label":"WELSH"},{"id":155,"code":"wo","label":"WOLOF"},{"id":156,"code":"xh","label":"XHOSA"},{"id":157,"code":"yi","label":"YIDDISH"},{"id":158,"code":"yo","label":"YORUBA"},{"id":159,"code":"za","label":"ZHUANG"},{"id":160,"code":"zu","label":"ZULU"});
+    Language.create({"id":1,"code":"sq","label":"Albanian"},{"id":2,"code":"en","label":"English"},{"id":3,"code":"ar","label":"Arabic"},{"id":4,"code":"hy","label":"Armenian"},{"id":5,"code":"az","label":"Azerbaijan"},{"id":6,"code":"af","label":"Afrikaans"},{"id":7,"code":"eu","label":"Basque"},{"id":8,"code":"be","label":"Belarusian"},{"id":9,"code":"bg","label":"Bulgarian"},{"id":10,"code":"bs","label":"Bosnian"},{"id":11,"code":"cy","label":"Welsh"},{"id":12,"code":"vi","label":"Vietnamese"},{"id":13,"code":"hu","label":"Hungarian"},{"id":14,"code":"ht","label":"Haitian (Creole)"},{"id":15,"code":"gl","label":"Galician"},{"id":16,"code":"nl","label":"Dutch"},{"id":17,"code":"el","label":"Greek"},{"id":18,"code":"ka","label":"Georgian"},{"id":19,"code":"da","label":"Danish"},{"id":20,"code":"he","label":"Yiddish"},{"id":21,"code":"id","label":"Indonesian"},{"id":22,"code":"ga","label":"Irish"},{"id":23,"code":"it","label":"Italian"},{"id":24,"code":"is","label":"Icelandic"},{"id":25,"code":"es","label":"Spanish"},{"id":26,"code":"kk","label":"Kazakh"},{"id":27,"code":"ca","label":"Catalan"},{"id":28,"code":"ky","label":"Kyrgyz"},{"id":29,"code":"zh","label":"Chinese"},{"id":30,"code":"ko","label":"Korean"},{"id":31,"code":"la","label":"Latin"},{"id":32,"code":"lv","label":"Latvian"},{"id":33,"code":"lt","label":"Lithuanian"},{"id":34,"code":"mg","label":"Malagasy"},{"id":35,"code":"ms","label":"Malay"},{"id":36,"code":"mt","label":"Maltese"},{"id":37,"code":"mk","label":"Macedonian"},{"id":38,"code":"mn","label":"Mongolian"},{"id":39,"code":"de","label":"German"},{"id":40,"code":"no","label":"Norwegian"},{"id":41,"code":"fa","label":"Persian"},{"id":42,"code":"pl","label":"Polish"},{"id":43,"code":"pt","label":"Portuguese"},{"id":44,"code":"ro","label":"Romanian"},{"id":45,"code":"ru","label":"Russian"},{"id":46,"code":"sr","label":"Serbian"},{"id":47,"code":"sk","label":"Slovakian"},{"id":48,"code":"sl","label":"Slovenian"},{"id":49,"code":"sw","label":"Swahili"},{"id":50,"code":"tg","label":"Tajik"},{"id":51,"code":"th","label":"Thai"},{"id":52,"code":"tl","label":"Tagalog"},{"id":53,"code":"tt","label":"Tatar"},{"id":54,"code":"tr","label":"Turkish"},{"id":55,"code":"uz","label":"Uzbek"},{"id":56,"code":"uk","label":"Ukrainian"},{"id":57,"code":"fi","label":"Finish"},{"id":58,"code":"fr","label":"French"},{"id":59,"code":"hr","label":"Croatian"},{"id":60,"code":"cs","label":"Czech"},{"id":61,"code":"sv","label":"Swedish"},{"id":62,"code":"et","label":"Estonian"},{"id":63,"code":"ja","label":"Japanese"});
   });
 
 User.find({}).removeAsync()
