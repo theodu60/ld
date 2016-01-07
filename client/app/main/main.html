@@ -18,9 +18,6 @@
 
 	<div flex="30">
 		<img id="logo_img" src="../../assets/images/logo.png">
-		<div class="message_found" align="center" ng-show="result">
-			<h1>{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h1>
-		</div>
 	</div>
 
 	<div flex="25">
@@ -30,6 +27,8 @@
         </md-input-container>
       	<md-button md-no-ink="" class="md-raised md-primary" ng-click="submit()">{{ 'ANALYSE' | translate }}</md-button>
      </div>
+
+	<div flex="5"></div>
 
 	<div flex="25" ng-show="result">
         <md-input-container class="md-block">
@@ -45,13 +44,15 @@
 			</md-select>
 		</md-input-container>
 	</div>
-
-	<div flex="20"></div>
 </div>
 <toaster-container></toaster-container>
-
+<div layout="row"><br></div>
 <div layout="row"  ng-show="result">
-		<div flex="40"></div>
+		<div flex="15"></div>
+
+		<div flex="30">
+			<h3 ng-show="result">{{ 'TITLE' | translate }}<span id="language_found">{{result | translate}}</span></h3>
+		</div>
 
 		<div flex="60">
     <p>
