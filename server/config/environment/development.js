@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://10.104.4.213/ld-dev'
+    uri: 'mongodb://localhost/ld-dev'
   },
   sequelize: {
     uri: 'sqlite://',
