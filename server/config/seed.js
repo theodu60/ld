@@ -8,7 +8,7 @@ import Thing from '../api/thing/thing.model';
 import User from '../api/user/user.model';
 import Language from '../api/language/language.model';
 import Detect from '../api/detect/detect.model';
-
+/*
 Detect.find({}).removeAsync()
   .then(function() {
     Detect.create(
@@ -1519,6 +1519,7 @@ Detect.find({}).removeAsync()
 }
     )
   });
+*/
 Language.find({}).removeAsync()
   .then(function() {
     Language.create({"id":1,"code":"sq","label":"Albanian"},{"id":2,"code":"en","label":"English"},{"id":3,"code":"ar","label":"Arabic"},{"id":4,"code":"hy","label":"Armenian"},{"id":5,"code":"az","label":"Azerbaijan"},{"id":6,"code":"af","label":"Afrikaans"},{"id":7,"code":"eu","label":"Basque"},{"id":8,"code":"be","label":"Belarusian"},{"id":9,"code":"bg","label":"Bulgarian"},{"id":10,"code":"bs","label":"Bosnian"},{"id":11,"code":"cy","label":"Welsh"},{"id":12,"code":"vi","label":"Vietnamese"},{"id":13,"code":"hu","label":"Hungarian"},{"id":14,"code":"ht","label":"Haitian (Creole)"},{"id":15,"code":"gl","label":"Galician"},{"id":16,"code":"nl","label":"Dutch"},{"id":17,"code":"el","label":"Greek"},{"id":18,"code":"ka","label":"Georgian"},{"id":19,"code":"da","label":"Danish"},{"id":20,"code":"he","label":"Yiddish"},{"id":21,"code":"id","label":"Indonesian"},{"id":22,"code":"ga","label":"Irish"},{"id":23,"code":"it","label":"Italian"},{"id":24,"code":"is","label":"Icelandic"},{"id":25,"code":"es","label":"Spanish"},{"id":26,"code":"kk","label":"Kazakh"},{"id":27,"code":"ca","label":"Catalan"},{"id":28,"code":"ky","label":"Kyrgyz"},{"id":29,"code":"zh","label":"Chinese"},{"id":30,"code":"ko","label":"Korean"},{"id":31,"code":"la","label":"Latin"},{"id":32,"code":"lv","label":"Latvian"},{"id":33,"code":"lt","label":"Lithuanian"},{"id":34,"code":"mg","label":"Malagasy"},{"id":35,"code":"ms","label":"Malay"},{"id":36,"code":"mt","label":"Maltese"},{"id":37,"code":"mk","label":"Macedonian"},{"id":38,"code":"mn","label":"Mongolian"},{"id":39,"code":"de","label":"German"},{"id":40,"code":"no","label":"Norwegian"},{"id":41,"code":"fa","label":"Persian"},{"id":42,"code":"pl","label":"Polish"},{"id":43,"code":"pt","label":"Portuguese"},{"id":44,"code":"ro","label":"Romanian"},{"id":45,"code":"ru","label":"Russian"},{"id":46,"code":"sr","label":"Serbian"},{"id":47,"code":"sk","label":"Slovakian"},{"id":48,"code":"sl","label":"Slovenian"},{"id":49,"code":"sw","label":"Swahili"},{"id":50,"code":"tg","label":"Tajik"},{"id":51,"code":"th","label":"Thai"},{"id":52,"code":"tl","label":"Tagalog"},{"id":53,"code":"tt","label":"Tatar"},{"id":54,"code":"tr","label":"Turkish"},{"id":55,"code":"uz","label":"Uzbek"},{"id":56,"code":"uk","label":"Ukrainian"},{"id":57,"code":"fi","label":"Finish"},{"id":58,"code":"fr","label":"French"},{"id":59,"code":"hr","label":"Croatian"},{"id":60,"code":"cs","label":"Czech"},{"id":61,"code":"sv","label":"Swedish"},{"id":62,"code":"et","label":"Estonian"},{"id":63,"code":"ja","label":"Japanese"});

@@ -25,6 +25,9 @@ module.exports = function(config) {
       'client/bower_components/angular-animate/angular-animate.js',
       'client/bower_components/AngularJS-Toaster/toaster.js',
       'client/bower_components/angular-translate/angular-translate.js',
+      'client/bower_components/angular-aria/angular-aria.js',
+      'client/bower_components/angular-messages/angular-messages.js',
+      'client/bower_components/angular-material/angular-material.js',
       'client/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'node_modules/socket.io-client/socket.io.js',

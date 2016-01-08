@@ -10,7 +10,9 @@ angular.module('ldApp', [
   'validation.match',
   'toaster',
   'ngAnimate',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'ngMaterial',
+  'ngMessages'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider,$translateProvider) {
     $urlRouterProvider
@@ -22,6 +24,8 @@ angular.module('ldApp', [
       CORRECT: 'Correct it',
       ANALYSE: 'Analyse',
       TRANSLATION: 'Translate',
+      ENTERTEXTE: 'Enter text to analyze :',
+      selectionTrad: 'Select language',
       sq: 'Albanian',
       en: 'English',
       ar: 'Arabic',
@@ -93,6 +97,8 @@ angular.module('ldApp', [
       CORRECT: 'Corriger',
       ANALYSE: 'Analyser',
       TRANSLATION: 'Traduire',
+      ENTERTEXTE: 'Entrez le texte à analyser :',
+      selectionTrad: 'Sélectionnez une langue',
       sq: 'Albanais',
       en: 'Anglais',
       ar: 'Arabe',
@@ -164,6 +170,8 @@ $translateProvider.translations('zh', {
       CORRECT: '正确的',
       ANALYSE: '分析一下',
       TRANSLATION: '翻译',
+      ENTERTEXTE: '阿尔巴尼亚翻译',
+      selectionTrad: '错误的语言吗',
       sq: '阿尔巴尼亚',
       en: '英文',
       ar: '阿拉伯文',

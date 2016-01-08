@@ -27,7 +27,9 @@
 }
 
 #logo_img {
-  height: 130px;
+  height: auto;
+  width: 90%;
+  min-width:300px;
 }
 
 .div_center {
@@ -41,7 +43,7 @@
 .message_found h1 {
   font-weight: bold;
   font-size: 24px;
-  color: #707070;
+  color: #3B3B3B;
   margin-top: 80px;
 }
 
@@ -80,4 +82,9 @@
 
 .textarea_text {
   resize: vertical;
+}
+
+.md-primary{
+  background-color: #01A9D8 !important;
+
 }
